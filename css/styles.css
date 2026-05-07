@@ -258,22 +258,22 @@ mark,.highlight{background:rgba(251,191,36,.25);border-radius:2px;color:inherit}
 .stats-row{gap:.5rem}
 .stat-card{padding:.6rem .75rem}
 .stat-card .num{font-size:1.2rem}
-.stat-card .lbl{font-size:10px}
+.stat-card .lbl{font-size:11px}
 .concepts-grid{grid-template-columns:1fr}
 .topic-icon{width:34px;height:34px;font-size:16px}
-.topic-title{font-size:.85rem}
-.topic-sub{font-size:10px}
-.level-badge{font-size:9px;padding:2px 6px}
+.topic-title{font-size:1rem}
+.topic-sub{font-size:12px}
+.level-badge{font-size:10px;padding:2px 6px}
 .links-row{gap:.25rem}
-.link-chip{font-size:10px;padding:.2rem .5rem}
+.link-chip{font-size:12px;padding:.2rem .5rem}
 .section-divider{margin:1.25rem 0 .6rem}
-.section-divider h2{font-size:.65rem}
+.section-divider h2{font-size:.7rem}
 .roadmap-phase{padding-left:2rem}
-.phase-title{font-size:.9rem}
-.phase-desc{font-size:12px}
-.phase-topic{font-size:10px}
-.code-block{font-size:10.5px;padding:.5rem .65rem}
-.detail-content li{font-size:11px}
+.phase-title{font-size:1rem}
+.phase-desc{font-size:13.5px}
+.phase-topic{font-size:11.5px}
+.code-block{font-size:12px;padding:.5rem .65rem}
+.detail-content li{font-size:13px}
 .ref-table th,.ref-table td{padding:.3rem .25rem}
 }
 
@@ -281,37 +281,37 @@ mark,.highlight{background:rgba(251,191,36,.25);border-radius:2px;color:inherit}
 @media(max-width:480px){
 .main{padding:1rem .75rem;padding-top:3.5rem}
 .hero{margin-bottom:1.5rem}
-.hero-badge{font-size:10px;padding:.2rem .5rem}
-.hero h1{font-size:1.5rem}
-.hero>p{font-size:13px}
+.hero-badge{font-size:11px;padding:.2rem .5rem}
+.hero h1{font-size:1.6rem}
+.hero>p{font-size:14.5px}
 .stats-row{grid-template-columns:1fr 1fr;gap:.4rem}
 .stat-card .num{font-size:1.1rem}
 .tab-bar{gap:0}
-.tab-btn{padding:.35rem .5rem;font-size:11px}
+.tab-btn{padding:.35rem .5rem;font-size:13px}
 .topic-header{gap:.5rem;padding:.75rem .875rem}
 .topic-icon{width:30px;height:30px;font-size:14px;border-radius:7px}
-.topic-title{font-size:.8rem}
+.topic-title{font-size:.95rem}
 .topic-meta{gap:.3rem}
-.done-check{width:16px;height:16px;font-size:9px}
+.done-check{width:16px;height:16px;font-size:10px}
 .chevron{font-size:14px}
 .topic-body{padding:0 .875rem .875rem}
 .what-box{padding:.65rem .75rem}
-.what-box p{font-size:12px}
-.concept-pill{padding:.35rem .6rem;font-size:11px}
-.concept-pill code{font-size:10px}
-.deep-dive summary{font-size:11px}
-.detail-content{padding:.65rem .75rem;font-size:11.5px}
-.detail-content h5{font-size:10px}
+.what-box p{font-size:13.5px}
+.concept-pill{padding:.35rem .6rem;font-size:12.5px}
+.concept-pill code{font-size:11.5px}
+.deep-dive summary{font-size:13px}
+.detail-content{padding:.65rem .75rem;font-size:13.5px}
+.detail-content h5{font-size:11.5px}
 .detail-content ul{padding-left:.8rem}
-.detail-content li{font-size:10.5px}
-.code-block{font-size:10px;padding:.4rem .5rem}
+.detail-content li{font-size:13px}
+.code-block{font-size:12px;padding:.4rem .5rem}
 .links-row{gap:.2rem}
-.link-chip{font-size:9.5px;padding:.2rem .45rem}
+.link-chip{font-size:11.5px;padding:.2rem .45rem}
 .quick-ref{padding:.75rem}
-.quick-ref h3{font-size:.85rem}
-.ref-table{font-size:10px;display:block;overflow-x:auto}
+.quick-ref h3{font-size:1rem}
+.ref-table{font-size:12px;display:block;overflow-x:auto}
 .roadmap-phase{padding-left:1.75rem;margin-bottom:1.25rem}
-.phase-dot{width:18px;height:18px;font-size:9px;left:0}
+.phase-dot{width:18px;height:18px;font-size:10px;left:0}
 .roadmap-phase::before{left:8px}
 }
 
