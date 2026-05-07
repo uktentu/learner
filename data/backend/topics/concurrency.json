@@ -1,0 +1,78 @@
+{
+  "id": "concurrency",
+  "icon": "⚙️",
+  "t": "Concurrency & Async",
+  "s": "Threads, async/await, event loops, race conditions, parallelism",
+  "sec": "scale",
+  "lv": "advanced",
+  "d": "Servers handle thousands of requests simultaneously. Understanding concurrency in your language is essential — Python's asyncio, Node.js event loop, Java thread pools, Go goroutines. Getting this wrong means race conditions, deadlocks, and slow servers.",
+  "c": [
+    "Thread vs Process vs Coroutine vs Goroutine",
+    "Event loop (Node.js, Python asyncio)",
+    "<code>async/await</code> patterns",
+    "Race conditions & mutex locks",
+    "Deadlock detection & prevention",
+    "Thread pools & executor services",
+    "Python GIL (Global Interpreter Lock)",
+    "I/O-bound vs CPU-bound optimization",
+    "Go channels & goroutines",
+    "Java CompletableFuture & virtual threads"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Concurrency is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Concurrency\nclass ConcurrencyManager {\n  initialize() {\n    console.log(\"Setting up Concurrency systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Concurrency Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Python asyncio docs",
+      "u": "https://docs.python.org/3/library/asyncio.html"
+    },
+    {
+      "t": "Node.js Event Loop",
+      "u": "https://nodejs.org/en/learn/asynchronous-work/event-loop-timers-and-nexttick"
+    },
+    {
+      "t": "Go Concurrency Patterns",
+      "u": "https://go.dev/blog/pipelines"
+    },
+    {
+      "t": "Java Virtual Threads",
+      "u": "https://openjdk.org/jeps/444"
+    },
+    {
+      "t": "Concurrency is not Parallelism (Rob Pike)",
+      "u": "https://go.dev/blog/waza-talk"
+    }
+  ]
+}

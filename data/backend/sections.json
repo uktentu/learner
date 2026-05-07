@@ -1,0 +1,10 @@
+[
+  {"id":"foundations","name":"🏁 Foundations","desc":"Prerequisites before writing backend code"},
+  {"id":"core","name":"⚙️ Core Backend","desc":"Essential skills every backend dev uses daily"},
+  {"id":"security","name":"🔐 Security","desc":"Auth, encryption, and vulnerability prevention"},
+  {"id":"architecture","name":"🏗️ Architecture","desc":"Patterns for structuring scalable systems"},
+  {"id":"infrastructure","name":"🐳 Infrastructure","desc":"DevOps, containers, CI/CD, and deployment"},
+  {"id":"scale","name":"📈 Scale & Design","desc":"System design, concurrency, and distributed systems"},
+  {"id":"data","name":"💾 Data Engineering","desc":"Streaming, pipelines, and data management"},
+  {"id":"optional","name":"🧪 Optional & Emerging","desc":"Specialized and cutting-edge backend topics"}
+]

@@ -1,0 +1,49 @@
+{
+  "id": "sorting-basics",
+  "icon": "🗂️",
+  "t": "Sorting Algorithms",
+  "s": "Merge, Quick, Insertion",
+  "sec": "sorting",
+  "lv": "core",
+  "d": "Algorithms that put elements of a list in a certain order.",
+  "c": [
+    "Merge Sort",
+    "Quick Sort",
+    "Insertion Sort",
+    "Sort an Array"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Merge Sort uses Divide and Conquer: split array in half, recursively sort, and merge back together (O(N log N) time, stable). Quick Sort uses a pivot to partition elements (O(N log N) expected, in-place, but unstable)."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "Merge Sort Merge Step: Use two pointers `i` and `j` to iterate through two sorted halves.",
+        "Compare halves, append smaller element to result array."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def merge(L, R):\n  res = []\n  i = j = 0\n  while i &lt; len(L) and j &lt; len(R):\n    if L[i] &lt; R[j]:\n      res.append(L[i]); i += 1\n    else:\n      res.append(R[j]); j += 1\n  res.extend(L[i:])\n  res.extend(R[j:])\n  return res</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: Merge O(N log N). Space: Merge O(N), Quick O(log N) call stack."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Merge Sort Tree:\n       [38, 27, 43, 3]\n      /               \\\n  [38, 27]         [43, 3]\n  /      \\         /      \\\n[38]    [27]     [43]    [3]\n  \\      /         \\      /\n  [27, 38]         [3, 43]\n       \\              /\n       [3, 27, 38, 43]</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

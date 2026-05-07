@@ -1,0 +1,49 @@
+{
+  "id": "dp-bitmasking",
+  "icon": "🎭",
+  "t": "DP with Bitmasking",
+  "s": "TSP, Assignment Problems",
+  "sec": "dp",
+  "lv": "optional",
+  "d": "Using integers as bitmasks to represent subsets or states in DP, usually when N is very small (N < 20).",
+  "c": [
+    "Travelling Salesperson Problem",
+    "Matchsticks to Square"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "When N is extremely small (N < 20), we can use an integer bitmask to represent which items have been selected. This converts subsets into array indices, enabling incredibly fast DP caching."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Mask 000 means nothing visited. Mask 111 means items 0, 1, 2 visited.",
+        "2. To check if bit `i` is set: `mask & (1 << i)`.",
+        "3. To set bit `i`: `mask | (1 << i)`.",
+        "4. Pass the mask into your memoized recursive function."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Example: Check if all N items are visited\nALL_VISITED = (1 &lt;&lt; N) - 1\nif mask == ALL_VISITED:\n  return True</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N * 2^N). Space: O(2^N) for the DP cache."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Items: 0, 1, 2\nMask 000: None selected\nMask 011 (3): Items 0 and 1 selected\nMask 101 (5): Items 0 and 2 selected\nMask 111 (7): All selected</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

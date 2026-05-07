@@ -1,0 +1,50 @@
+{
+  "id": "sweep-line",
+  "icon": "🧹",
+  "t": "Sweep Line Algorithm",
+  "s": "Intervals, Meetings",
+  "sec": "advanced",
+  "lv": "advanced",
+  "d": "Used for interval problems or computational geometry. Involves sorting events and processing them chronologically.",
+  "c": [
+    "Merge Intervals",
+    "Insert Interval",
+    "Meeting Rooms II",
+    "The Skyline Problem"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Sweep Line is heavily used for interval scheduling and computational geometry. It processes events sequentially from left to right across a timeline."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Break intervals `[start, end]` into two point events: `(start, +1)` and `(end, -1)`.",
+        "2. Sort the events chronologically. If times match, process ends before starts.",
+        "3. Iterate through events, maintaining a running sum of active intervals."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def minMeetingRooms(intervals):\n  start = sorted([i[0] for i in intervals])\n  end = sorted([i[1] for i in intervals])\n  \n  res, count = 0, 0\n  s, e = 0, 0\n  while s &lt; len(intervals):\n    if start[s] &lt; end[e]:\n      count += 1\n      s += 1\n    else:\n      count -= 1\n      e += 1\n    res = max(res, count)\n  return res</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N log N) to sort intervals. Space: O(N)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Intervals: [1,4], [2,5]\nEvents:\nx=1: +1 (Active: 1)\nx=2: +1 (Active: 2) -&gt; Max overlap is 2\nx=4: -1 (Active: 1)\nx=5: -1 (Active: 0)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

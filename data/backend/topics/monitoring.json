@@ -1,0 +1,71 @@
+{
+  "id": "monitoring",
+  "icon": "📊",
+  "t": "Monitoring & Observability",
+  "s": "Prometheus, Grafana, logging, tracing, alerting, SLOs",
+  "sec": "infrastructure",
+  "lv": "important",
+  "d": "If you can't observe your system, you can't fix it. Three pillars: Logs (what happened), Metrics (how much/how fast), Traces (which path). Tools like Prometheus, Grafana, and OpenTelemetry help detect issues before users do.",
+  "c": [
+    "Structured logging (JSON logs)",
+    "Log levels: <code>DEBUG INFO WARN ERROR FATAL</code>",
+    "Metrics: counters, gauges, histograms",
+    "Prometheus + Grafana stack",
+    "Distributed tracing (OpenTelemetry, Jaeger)",
+    "Error tracking (Sentry, Datadog)",
+    "Alerting & on-call (PagerDuty, OpsGenie)",
+    "SLOs, SLAs, SLIs & error budgets",
+    "Health check endpoints",
+    "The 4 Golden Signals (latency, traffic, errors, saturation)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Monitoring and Observability give you x-ray vision into your backend. Without it, you are flying blind when production goes down. It consists of Metrics, Logs, and Traces."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Metrics: Numbers over time (CPU usage, Error rates). Tools: Prometheus, Grafana.",
+        "2. Logs: Event records (Error stacks). Tools: ELK stack (Elasticsearch, Logstash, Kibana).",
+        "3. Traces: Following a request across microservices. Tools: Jaeger, DataDog."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Prometheus Metric Example\nconst counter = new promClient.Counter({\n  name: 'http_requests_total',\n  help: 'Total HTTP requests',\n  labelNames: ['method', 'status']\n});\ncounter.inc({ method: 'GET', status: 200 });</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[App Service A] --HTTP--&gt; [App Service B]\n  | (Logs: Error line 42)    | (Logs: Timeout)\n  v                          v\n[ Centralized Log Aggregator (Elasticsearch) ]\n[ Dashboard (Kibana/Grafana) Alerts Team Slack ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Prometheus Docs",
+      "u": "https://prometheus.io/docs/introduction/overview"
+    },
+    {
+      "t": "OpenTelemetry Docs",
+      "u": "https://opentelemetry.io/docs"
+    },
+    {
+      "t": "Grafana Tutorials",
+      "u": "https://grafana.com/tutorials/"
+    },
+    {
+      "t": "Google SRE Book (free)",
+      "u": "https://sre.google/sre-book/table-of-contents/"
+    },
+    {
+      "t": "Sentry Docs",
+      "u": "https://docs.sentry.io"
+    }
+  ]
+}

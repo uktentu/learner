@@ -1,0 +1,72 @@
+{
+  "id": "sql-db",
+  "icon": "🗄️",
+  "t": "SQL Databases",
+  "s": "PostgreSQL, MySQL, joins, indexing, transactions, normalization",
+  "sec": "core",
+  "lv": "core",
+  "d": "Relational databases are the backbone of most applications. SQL knowledge — joins, indexes, transactions, normalization — is non-negotiable. PostgreSQL is the gold standard for new projects.",
+  "c": [
+    "SQL: <code>SELECT JOIN WHERE GROUP BY HAVING ORDER BY</code>",
+    "ACID transactions (Atomicity, Consistency, Isolation, Durability)",
+    "Indexes (B-tree, Hash, GIN, Composite)",
+    "Schema design & normalization (1NF→3NF→BCNF)",
+    "Foreign keys & referential integrity",
+    "Views, stored procedures, triggers",
+    "Connection pooling",
+    "Query optimization & EXPLAIN",
+    "Migrations & schema versioning",
+    "PostgreSQL vs MySQL vs SQLite"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Relational Databases store data in tables with predefined schemas. They use SQL (Structured Query Language) and guarantee ACID properties (Atomicity, Consistency, Isolation, Durability) for reliable transactions."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Define strict schema using DDL (CREATE TABLE).",
+        "2. Ensure relationships using Primary and Foreign Keys.",
+        "3. Maintain data integrity via constraints (UNIQUE, NOT NULL).",
+        "4. Query complex relations using JOINs."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>SELECT Users.Name, Posts.Title \nFROM Users \nJOIN Posts ON Users.ID = Posts.User_ID \nWHERE Users.Role = 'Admin';</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[Users Table]          [Posts Table]\nID | Name | Role       ID | User_ID | Title\n----------------       --------------------\n 1 | Bob  | User  &lt;--   5 |    1    | \"Hi\"\n 2 | Ann  | Admin       6 |    1    | \"Yo\"</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "SQLBolt (interactive SQL)",
+      "u": "https://sqlbolt.com"
+    },
+    {
+      "t": "PostgreSQL Official Docs",
+      "u": "https://www.postgresql.org/docs"
+    },
+    {
+      "t": "Use The Index, Luke",
+      "u": "https://use-the-index-luke.com"
+    },
+    {
+      "t": "MySQL Tutorial",
+      "u": "https://dev.mysql.com/doc/refman/en/tutorial.html"
+    },
+    {
+      "t": "SQL Performance Explained",
+      "u": "https://sql-performance-explained.com"
+    }
+  ]
+}

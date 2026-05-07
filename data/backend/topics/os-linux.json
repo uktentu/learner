@@ -1,0 +1,71 @@
+{
+  "id": "os-linux",
+  "icon": "🐧",
+  "t": "OS & Linux Basics",
+  "s": "Processes, file systems, permissions, shell scripting",
+  "sec": "foundations",
+  "lv": "core",
+  "d": "Most backend servers run Linux. Understanding the OS — processes, memory, file systems, permissions, and how the kernel manages resources — is essential for deploying, debugging, and optimizing server applications.",
+  "c": [
+    "Linux file system hierarchy (<code>/etc /var /home /usr</code>)",
+    "Process management (<code>ps top htop kill</code>)",
+    "File permissions (<code>chmod chown rwx</code>)",
+    "Users & groups",
+    "Package managers (<code>apt yum brew</code>)",
+    "Environment variables",
+    "Systemd & service management",
+    "SSH & remote access",
+    "Memory & CPU monitoring",
+    "Cron jobs & scheduling"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Linux is the foundation of modern backend infrastructure. It provides process isolation, file system management, and networking capabilities. Understanding permissions, processes, and I/O streams is critical."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Standard In (stdin), Out (stdout), Error (stderr).",
+        "2. Piping (|) to connect stdout of one program to stdin of another.",
+        "3. Permissions (Read=4, Write=2, Execute=1)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Give owner read/write/execute, group read/execute, others read\nchmod 754 script.sh\n\n# Find all running node processes and kill them\nps aux | grep node | awk '{print $2}' | xargs kill -9</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">User Space:\n  [App 1]   [App 2]   [App 3]\n---------------------------------- System Calls\nKernel Space:\n  [File System] [Networking] [CPU Sched]\n----------------------------------\nHardware: CPU, RAM, Disk</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Linux Journey (interactive)",
+      "u": "https://linuxjourney.com"
+    },
+    {
+      "t": "The Linux Command Line (free book)",
+      "u": "https://linuxcommand.org/tlcl.php"
+    },
+    {
+      "t": "OverTheWire: Bandit (practice)",
+      "u": "https://overthewire.org/wargames/bandit/"
+    },
+    {
+      "t": "MIT Missing Semester",
+      "u": "https://missing.csail.mit.edu"
+    },
+    {
+      "t": "Linux Filesystem Explained",
+      "u": "https://www.linux.com/training-tutorials/linux-filesystem-explained/"
+    }
+  ]
+}

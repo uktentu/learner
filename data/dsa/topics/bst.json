@@ -1,0 +1,50 @@
+{
+  "id": "bst",
+  "icon": "🌲",
+  "t": "Binary Search Trees",
+  "s": "Ordered property, validation",
+  "sec": "trees",
+  "lv": "important",
+  "d": "A binary tree where left child < parent < right child.",
+  "c": [
+    "Validate BST",
+    "Lowest Common Ancestor of BST",
+    "Kth Smallest Element",
+    "Delete Node in a BST"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Binary Search Trees (BST) have the property: Left Subtree values < Root value < Right Subtree values. Because of this, an Inorder Traversal (Left -> Root -> Right) of a valid BST will always return elements in sorted order."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. To validate: Pass down a `min_val` and `max_val` boundary.",
+        "2. Node value must be strictly between boundary.",
+        "3. Left child gets `max_val = node.val`, Right child gets `min_val = node.val`."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def isValidBST(root):\n  def valid(node, left, right):\n    if not node: return True\n    if not (node.val &gt; left and node.val &lt; right):\n      return False\n    return (valid(node.left, left, node.val) and \n            valid(node.right, node.val, right))\n  return valid(root, float('-inf'), float('inf'))</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N). Space: O(H) for call stack."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">        ( 8 )\n       /     \\\n    ( 3 )    ( 10 )\n   /     \\       \\\n( 1 )   ( 6 )    ( 14 )\nAll left children &lt; parent, right children &gt; parent.</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

@@ -1,0 +1,67 @@
+{
+  "id": "db-scaling",
+  "icon": "📊",
+  "t": "Database Scaling",
+  "s": "Sharding, replication, partitioning, connection pooling, read replicas",
+  "sec": "scale",
+  "lv": "advanced",
+  "d": "When your database becomes the bottleneck, you need scaling strategies. Read replicas handle read-heavy loads. Sharding distributes data across servers. Connection pooling prevents exhausting connections. These are critical senior-level skills.",
+  "c": [
+    "Read replicas (primary-replica setup)",
+    "Horizontal sharding strategies",
+    "Vertical partitioning",
+    "Connection pooling (PgBouncer, HikariCP)",
+    "Database indexing at scale",
+    "Query optimization & EXPLAIN ANALYZE",
+    "Materialized views",
+    "Database migration strategies (zero-downtime)",
+    "Multi-region database setup",
+    "NewSQL databases (CockroachDB, TiDB, Spanner)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "As applications grow, a single database server will bottleneck. Database scaling involves distributing the load across multiple machines to ensure fast read/write speeds."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Vertical Scaling: Buy a bigger server (more RAM/CPU). Limits apply.",
+        "2. Read Replicas: One Master for Writes, multiple Replicas for Reads.",
+        "3. Sharding (Horizontal): Splitting the database table across multiple servers based on a Shard Key (e.g., user_id)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Sharding logic example at App layer\nfunction getDatabaseConnection(userId) {\n  const shardId = userId % 2;\n  return shardId === 0 ? dbServerA : dbServerB;\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Read Replication:\n           [Master DB] (Writes only)\n            /       \\\n (Sync)    v         v\n    [Replica 1]   [Replica 2] (Reads only)\n\nSharding:\nServer 1: Users A-M    Server 2: Users N-Z</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Vitess (MySQL sharding)",
+      "u": "https://vitess.io/docs/"
+    },
+    {
+      "t": "Citus (PostgreSQL sharding)",
+      "u": "https://www.citusdata.com/product"
+    },
+    {
+      "t": "PgBouncer",
+      "u": "https://www.pgbouncer.org"
+    },
+    {
+      "t": "CockroachDB Docs",
+      "u": "https://www.cockroachlabs.com/docs/"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+[
+  {
+    "name": "Phase 1: Fundamentals",
+    "desc": "Big-O, Arrays, Strings, and Hashing",
+    "topics": [
+      "big-o",
+      "arrays-basics",
+      "hash-maps",
+      "math-basics"
+    ],
+    "est": "2 weeks"
+  },
+  {
+    "name": "Phase 2: Core Patterns",
+    "desc": "Mastering Two Pointers and Sliding Window",
+    "topics": [
+      "two-pointers",
+      "sliding-window",
+      "prefix-sum"
+    ],
+    "est": "2 weeks"
+  },
+  {
+    "name": "Phase 3: Linked Lists & Stacks",
+    "desc": "Pointers traversal and LIFO/FIFO",
+    "topics": [
+      "linked-lists",
+      "fast-slow-pointers",
+      "stacks-queues",
+      "monotonic-stack"
+    ],
+    "est": "2 weeks"
+  },
+  {
+    "name": "Phase 4: Search & Sorting",
+    "desc": "Binary Search and common sorting algorithms",
+    "topics": [
+      "binary-search",
+      "sorting-basics",
+      "cyclic-sort"
+    ],
+    "est": "1 week"
+  },
+  {
+    "name": "Phase 5: Trees & Heaps",
+    "desc": "Recursion, BSTs, Tries, and Priority Queues",
+    "topics": [
+      "binary-trees",
+      "bst",
+      "tries",
+      "heaps",
+      "top-k"
+    ],
+    "est": "3 weeks"
+  },
+  {
+    "name": "Phase 6: Backtracking & Greedy",
+    "desc": "Exploring all possibilities and local optimums",
+    "topics": [
+      "backtracking",
+      "greedy"
+    ],
+    "est": "2 weeks"
+  },
+  {
+    "name": "Phase 7: Graphs",
+    "desc": "Traversals, Union Find, and Shortest Paths",
+    "topics": [
+      "graphs-basics",
+      "topological-sort",
+      "union-find",
+      "shortest-paths",
+      "mst"
+    ],
+    "est": "3 weeks"
+  },
+  {
+    "name": "Phase 8: Dynamic Programming",
+    "desc": "Memoization, Tabulation, and DP Patterns",
+    "topics": [
+      "dp-1d",
+      "dp-2d",
+      "knapsack-01",
+      "lis-lcs"
+    ],
+    "est": "4 weeks"
+  },
+  {
+    "name": "Phase 9: Advanced Topics",
+    "desc": "Segment Trees, Bitmasking, Sweep Line",
+    "topics": [
+      "segment-trees",
+      "bit-manipulation",
+      "sweep-line",
+      "dp-bitmasking"
+    ],
+    "est": "3 weeks"
+  }
+]

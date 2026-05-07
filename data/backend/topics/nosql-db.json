@@ -1,0 +1,71 @@
+{
+  "id": "nosql-db",
+  "icon": "🍃",
+  "t": "NoSQL Databases",
+  "s": "MongoDB, Redis, Cassandra, DynamoDB — when and why",
+  "sec": "core",
+  "lv": "core",
+  "d": "NoSQL databases solve problems relational databases struggle with: flexible schemas, horizontal scaling, and specific data patterns. Understanding the 4 types (Document, Key-Value, Column, Graph) and when to use each is crucial.",
+  "c": [
+    "Document stores (MongoDB, Firestore, CouchDB)",
+    "Key-Value stores (Redis, DynamoDB, etcd)",
+    "Column-family stores (Cassandra, HBase, ScyllaDB)",
+    "Graph databases (Neo4j, ArangoDB, Amazon Neptune)",
+    "CAP theorem trade-offs",
+    "Eventual consistency vs strong consistency",
+    "Schema design for NoSQL (denormalization)",
+    "Aggregation pipelines (MongoDB)",
+    "Time-series databases (InfluxDB, TimescaleDB)",
+    "When SQL beats NoSQL"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "NoSQL databases provide flexible schemas and scale horizontally with ease. They come in various types: Document (MongoDB), Key-Value (Redis), Wide-Column (Cassandra), and Graph (Neo4j)."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Document DBs store JSON-like objects (BSON).",
+        "2. Ideal for rapid prototyping or unstructured data.",
+        "3. Trades strict ACID consistency for high availability and partition tolerance (CAP Theorem)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// MongoDB Query finding users in NY with JS skill\ndb.users.find({\n  \"address.city\": \"NY\",\n  \"skills\": \"JS\"\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Document (MongoDB):\n{\n  \"_id\": \"user_123\",\n  \"name\": \"Bob\",\n  \"skills\": [\"JS\", \"Go\"], // Arrays natively supported!\n  \"address\": { \"city\": \"NY\" } // Nested objects!\n}</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "MongoDB University (free)",
+      "u": "https://university.mongodb.com"
+    },
+    {
+      "t": "Redis Docs",
+      "u": "https://redis.io/docs"
+    },
+    {
+      "t": "Cassandra Documentation",
+      "u": "https://cassandra.apache.org/doc/latest/"
+    },
+    {
+      "t": "Neo4j Graph Academy",
+      "u": "https://graphacademy.neo4j.com"
+    },
+    {
+      "t": "NoSQL Distilled (book summary)",
+      "u": "https://martinfowler.com/books/nosql.html"
+    }
+  ]
+}

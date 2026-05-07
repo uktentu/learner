@@ -1,0 +1,45 @@
+{
+  "tools": [
+    [
+      "Practice Platforms",
+      "LeetCode, NeetCode, Codeforces, HackerRank",
+      "Solving algorithm problems"
+    ],
+    [
+      "Curated Lists",
+      "Blind 75, NeetCode 150, Striver SDE Sheet",
+      "Focused interview preparation"
+    ],
+    [
+      "Visualizers",
+      "Visualgo.net, Algorithm Visualizer",
+      "Seeing how algorithms execute step-by-step"
+    ]
+  ],
+  "books": [
+    [
+      "Cracking the Coding Interview",
+      "Book",
+      "The absolute gold standard for technical interviews",
+      "https://www.crackingthecodinginterview.com"
+    ],
+    [
+      "Grokking the Coding Interview",
+      "Course",
+      "Learning pattern-based problem solving",
+      "https://www.designgurus.io/course/grokking-the-coding-interview"
+    ],
+    [
+      "NeetCode Pro",
+      "Video Course",
+      "Detailed walkthroughs of the 150 best patterns",
+      "https://neetcode.io/pro"
+    ],
+    [
+      "Striver A2Z DSA Course",
+      "Interactive",
+      "Comprehensive free structured curriculum",
+      "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/"
+    ]
+  ]
+}

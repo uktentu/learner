@@ -1,0 +1,74 @@
+{
+  "id": "event-sourcing",
+  "icon": "📜",
+  "t": "Event Sourcing & CQRS",
+  "s": "Event logs, projections, command-query separation, event stores",
+  "sec": "optional",
+  "lv": "optional",
+  "d": "Event sourcing stores state as a sequence of events rather than current state. CQRS separates read and write models. Together they enable powerful audit trails, temporal queries, and scalable architectures — used by financial systems and complex domains.",
+  "c": [
+    "Event sourcing vs state-based storage",
+    "Event store (append-only log)",
+    "Projections & read models",
+    "CQRS (Command Query Responsibility Segregation)",
+    "Snapshots for performance",
+    "Event versioning & schema evolution",
+    "Eventual consistency patterns",
+    "Domain events vs integration events",
+    "Frameworks: Axon, EventStoreDB, Marten",
+    "When NOT to use event sourcing"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Event Sourcing is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Event Sourcing\nclass EventSourcingManager {\n  initialize() {\n    console.log(\"Setting up Event Sourcing systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Event Sourcing Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Event Store DB",
+      "u": "https://developers.eventstore.com/"
+    },
+    {
+      "t": "Martin Fowler: Event Sourcing",
+      "u": "https://martinfowler.com/eaaDev/EventSourcing.html"
+    },
+    {
+      "t": "CQRS Pattern (Microsoft)",
+      "u": "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"
+    },
+    {
+      "t": "Event Sourcing in Practice",
+      "u": "https://eventmodeling.org"
+    }
+  ]
+}

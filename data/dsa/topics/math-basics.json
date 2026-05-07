@@ -1,0 +1,52 @@
+{
+  "id": "math-basics",
+  "icon": "🧮",
+  "t": "Math & Geometry",
+  "s": "Primes, GCD, Geometry",
+  "sec": "basics",
+  "lv": "important",
+  "d": "Fundamental math algorithms often required in interviews, such as finding prime numbers, greatest common divisor, and simple geometry.",
+  "c": [
+    "Sieve of Eratosthenes",
+    "Euclidean Algorithm (GCD)",
+    "Modular Arithmetic",
+    "Fast Exponentiation",
+    "Points and Lines"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Math and Geometry problems in DSA often test your ability to avoid O(N) brute force by using mathematical properties like GCD, Prime factorization, or Modular Arithmetic."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "Sieve of Eratosthenes: Create a boolean array of size N.",
+        "Iterate from 2 to sqrt(N).",
+        "If a number is prime, mark all its multiples as false.",
+        "The remaining true indices are prime."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def sieve(n):\n  primes = [True] * (n + 1)\n  p = 2\n  while p * p &lt;= n:\n    if primes[p]:\n      for i in range(p * p, n + 1, p):\n        primes[i] = False\n    p += 1\n  return [p for p in range(2, n) if primes[p]]</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N log log N) for Sieve. Space: O(N) for boolean array."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Prime Sieve:\n[2] 3  4  5  6  7  8  9\n[2] 3 (4) 5 (6) 7 (8) 9 -&gt; eliminate multiples of 2\n[2][3] 5  7  9 -&gt; eliminate multiples of 3</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

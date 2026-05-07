@@ -1,0 +1,68 @@
+{
+  "id": "api-design",
+  "icon": "📐",
+  "t": "API Design Patterns",
+  "s": "Idempotency, rate limiting, pagination, error handling, versioning",
+  "sec": "security",
+  "lv": "important",
+  "d": "Good API design makes your service easy to use, debug, and scale. Patterns like idempotency keys, consistent error formats, rate limiting, and proper versioning separate professional APIs from amateur ones.",
+  "c": [
+    "Idempotency keys for safe retries",
+    "Consistent error response format",
+    "Rate limiting strategies (token bucket, sliding window)",
+    "API versioning strategies",
+    "Request validation & schema enforcement",
+    "Webhook design patterns",
+    "API documentation (OpenAPI/Swagger)",
+    "Backward compatibility",
+    "Bulk operations & batch endpoints",
+    "API deprecation strategy"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Good API design means creating interfaces that are predictable, versioned, and easy for clients to consume. It involves consistent naming conventions, pagination, filtering, and thorough documentation."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Use plural nouns for resources (/users, not /user).",
+        "2. Version APIs early (e.g., /api/v1/users).",
+        "3. Support pagination for large datasets (?limit=20&offset=40).",
+        "4. Document using OpenAPI (Swagger)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Pagination Example\napp.get('/api/v1/posts', async (req, res) =&gt; {\n  const limit = parseInt(req.query.limit) || 10;\n  const page = parseInt(req.query.page) || 1;\n  const posts = await db.posts.find().skip((page-1)*limit).limit(limit);\n  res.json({ data: posts, page, limit });\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">API URL Structure:\n[Base URL]       [Version] [Resource] [Identifier] [Sub-resource]\napi.example.com /v1       /users     /123         /orders\n-&gt; \"Get orders for user 123 using API version 1\"</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Stripe API Design",
+      "u": "https://stripe.com/docs/api"
+    },
+    {
+      "t": "Google API Design Guide",
+      "u": "https://cloud.google.com/apis/design"
+    },
+    {
+      "t": "Zalando RESTful Guidelines",
+      "u": "https://opensource.zalando.com/restful-api-guidelines/"
+    },
+    {
+      "t": "API Design Patterns (book)",
+      "u": "https://www.manning.com/books/api-design-patterns"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "id": "shortest-paths",
+  "icon": "🗺️",
+  "t": "Shortest Paths",
+  "s": "Dijkstra, Bellman-Ford, Floyd-Warshall",
+  "sec": "graphs",
+  "lv": "advanced",
+  "d": "Algorithms to find the shortest path in weighted graphs.",
+  "c": [
+    "Network Delay Time",
+    "Cheapest Flights Within K Stops",
+    "Path With Maximum Probability"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Dijkstra's Algorithm finds the shortest path from a starting node to all other nodes in a weighted graph (no negative weights). It uses a Min-Heap to always explore the closest unvisited node first."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Push `(0, start_node)` to Min-Heap. Track `visited`.",
+        "2. Pop `(weight, node)`. If visited, continue.",
+        "3. Mark visited. For each neighbor: push `(weight + edge_weight, neighbor)`."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def dijkstra(n, edges, src):\n  adj = collections.defaultdict(list)\n  for u, v, w in edges: adj[u].append((v, w))\n  \n  minHeap = [(0, src)]\n  visit = set()\n  t = 0\n  \n  while minHeap:\n    w1, n1 = heapq.heappop(minHeap)\n    if n1 in visit: continue\n    visit.add(n1)\n    t = max(t, w1)\n    \n    for n2, w2 in adj[n1]:\n      if n2 not in visit:\n        heapq.heappush(minHeap, (w1 + w2, n2))\n  return t if len(visit) == n else -1</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(E log V) because of the Min-Heap. Space: O(V + E)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">   [A] --2-- [B]\n    |       / |\n    5     1   3\n    |   /     |\n   [C] --4-- [D]\nA to C = A-&gt;B-&gt;C = 3 (not 5!)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

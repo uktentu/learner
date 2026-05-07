@@ -1,0 +1,52 @@
+{
+  "id": "monotonic-stack",
+  "icon": "📉",
+  "t": "Monotonic Stack / Queue",
+  "s": "Next Greater Element",
+  "sec": "stacks",
+  "lv": "advanced",
+  "d": "A stack that is strictly increasing or decreasing. Used to find the 'next greater/smaller' element in O(n) time.",
+  "c": [
+    "Daily Temperatures",
+    "Largest Rectangle in Histogram",
+    "Sliding Window Maximum (Monotonic Queue)",
+    "132 Pattern"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "A Monotonic Stack maintains elements in a strictly increasing or strictly decreasing order. It is the optimal solution for finding the 'Next Greater Element' or 'Next Smaller Element' in an array in O(N) time instead of O(N²)."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Initialize empty stack.",
+        "2. Iterate through array.",
+        "3. While stack is not empty AND current element > stack top:",
+        "4. The current element is the 'Next Greater' for the popped stack top.",
+        "5. Push current element to stack."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def dailyTemperatures(temperatures):\n  res = [0] * len(temperatures)\n  stack = [] # stores indices\n  for i, t in enumerate(temperatures):\n    while stack and t &gt; temperatures[stack[-1]]:\n      stack_idx = stack.pop()\n      res[stack_idx] = i - stack_idx\n    stack.append(i)\n  return res</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) since every element is pushed/popped at most once. Space: O(N)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Array: [2, 1, 2, 4, 3] -&gt; Next Greater Element\nStack processes right-to-left:\n[3]   -&gt; NGE for 3 is -1\n[4,3] -&gt; NGE for 4 is -1\n[4,2] -&gt; NGE for 2 is 4\n[4,2,1]-&gt;NGE for 1 is 2\n[4,2] -&gt; NGE for 2 is 4</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

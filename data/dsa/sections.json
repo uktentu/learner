@@ -1,0 +1,62 @@
+[
+  {
+    "id": "basics",
+    "name": "1. Fundamentals & Math",
+    "desc": "Big-O, math concepts, and bit manipulation"
+  },
+  {
+    "id": "arrays",
+    "name": "2. Arrays & Strings",
+    "desc": "Core arrays, Prefix Sums, Kadane's"
+  },
+  {
+    "id": "patterns",
+    "name": "3. Array Patterns",
+    "desc": "Two Pointers, Sliding Window"
+  },
+  {
+    "id": "hashing",
+    "name": "4. Hashing",
+    "desc": "Hash Maps, Sets, String Hashing"
+  },
+  {
+    "id": "linked-list",
+    "name": "5. Linked Lists",
+    "desc": "Reversal, Fast/Slow Pointers"
+  },
+  {
+    "id": "stacks",
+    "name": "6. Stacks & Queues",
+    "desc": "Monotonic Stacks/Queues"
+  },
+  {
+    "id": "trees",
+    "name": "7. Trees",
+    "desc": "Binary Trees, BST, Tries, Segment Trees"
+  },
+  {
+    "id": "graphs",
+    "name": "8. Graphs",
+    "desc": "BFS/DFS, Union Find, Shortest Paths, MST"
+  },
+  {
+    "id": "heaps",
+    "name": "9. Heaps",
+    "desc": "Top K, Two Heaps Pattern"
+  },
+  {
+    "id": "sorting",
+    "name": "10. Sorting & Searching",
+    "desc": "Binary Search, Sorting algorithms"
+  },
+  {
+    "id": "dp",
+    "name": "11. Dynamic Programming",
+    "desc": "1D/2D, Knapsack, LIS, LCS, DP on Trees"
+  },
+  {
+    "id": "advanced",
+    "name": "12. Advanced & Misc",
+    "desc": "Backtracking, Greedy, Sweep Line"
+  }
+]

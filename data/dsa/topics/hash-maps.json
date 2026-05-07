@@ -1,0 +1,51 @@
+{
+  "id": "hash-maps",
+  "icon": "🗺️",
+  "t": "Hash Maps & Sets",
+  "s": "O(1) lookups, counting",
+  "sec": "hashing",
+  "lv": "core",
+  "d": "Provide O(1) average time complexity for lookups, insertions, and deletions.",
+  "c": [
+    "Two Sum",
+    "Contains Duplicate",
+    "Group Anagrams",
+    "Top K Frequent Elements",
+    "Longest Consecutive Sequence"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Hash Maps (Dictionaries in Python) use a hashing function to map keys to buckets in an array. This provides an expected O(1) time complexity for insertions, deletions, and lookups, making it the most powerful data structure in coding interviews."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Instantiate a map/dictionary.",
+        "2. Use it to store frequencies (character counts) or seen values (Two Sum).",
+        "3. Check `if key in map` to achieve O(1) lookups instead of O(N) nested loops."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def twoSum(nums, target):\n  prevMap = {} # val : index\n  for i, n in enumerate(nums):\n    diff = target - n\n    if diff in prevMap:\n      return [prevMap[diff], i]\n    prevMap[n] = i\n  return []</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) total, O(1) per operation. Space: O(N) to store elements."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Key     Hash Func    Bucket\n\"Apple\"  -&gt; H() -&gt;   [0] -&gt; null\n\"Banana\" -&gt; H() -&gt;   [1] -&gt; \"Banana\"\n\"Mango\"  -&gt; H() -&gt;   [2] -&gt; \"Apple\" -&gt; \"Mango\" (Collision!)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

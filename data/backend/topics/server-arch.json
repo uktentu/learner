@@ -1,0 +1,67 @@
+{
+  "id": "server-arch",
+  "icon": "🏗️",
+  "t": "Server Architecture",
+  "s": "MVC, monolith, microservices, serverless, 12-factor app",
+  "sec": "architecture",
+  "lv": "important",
+  "d": "How you structure your server determines maintainability, scalability, and testability. Start with monoliths, understand MVC, learn when microservices make sense. The 12-factor app methodology guides production-ready design.",
+  "c": [
+    "MVC pattern (Model-View-Controller)",
+    "Monolith vs Microservices trade-offs",
+    "Serverless (Lambda, Cloud Functions, Workers)",
+    "Service-to-service communication (gRPC, REST, events)",
+    "API Gateway pattern",
+    "Domain-Driven Design (DDD) basics",
+    "Dependency Injection",
+    "12-Factor App methodology",
+    "Hexagonal / Clean Architecture",
+    "CQRS (Command Query Responsibility Segregation)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Server Architecture is how your backend components are structured. Monoliths put everything in one codebase. Microservices break domains into independent services. Both have distinct trade-offs."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Monolith: Easy to deploy, single DB, tightly coupled.",
+        "2. Microservices: Independent deployments, independent DBs, hard to orchestrate.",
+        "3. Start with a Modular Monolith before splitting into services."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// In a monolithic architecture, modules call functions directly.\nconst invoice = billingService.generate(user.id);\n\n// In microservices, they communicate over network (HTTP/gRPC)\nconst res = await fetch('http://billing-service/api/generate');</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Monolith:                   Microservices:\n[ Auth + Billing + UI ]     [Auth]  [Billing]  [UI]\n         |                     |        |       |\n     [Database]             [DB1]     [DB2]   [Cache]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "12factor.net",
+      "u": "https://12factor.net"
+    },
+    {
+      "t": "Microservices Patterns",
+      "u": "https://microservices.io/patterns"
+    },
+    {
+      "t": "Fowler: Microservices",
+      "u": "https://martinfowler.com/articles/microservices.html"
+    },
+    {
+      "t": "Clean Architecture (summary)",
+      "u": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html"
+    }
+  ]
+}

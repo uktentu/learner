@@ -1,0 +1,49 @@
+{
+  "id": "rabin-karp",
+  "icon": "🔍",
+  "t": "String Hashing (Rabin-Karp)",
+  "s": "Pattern matching, Rolling Hash",
+  "sec": "hashing",
+  "lv": "advanced",
+  "d": "A string searching algorithm that uses hashing to find any one of a set of pattern strings in a text.",
+  "c": [
+    "Repeated DNA Sequences",
+    "Find All Anagrams (can use sliding window hash)",
+    "Longest Duplicate Substring"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Rabin-Karp is a string searching algorithm that uses a Rolling Hash. Instead of comparing strings character by character O(N*M), it compares their hashes O(1). If hashes match, it does a deep check to avoid collisions."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Compute hash of the pattern and first window of text.",
+        "2. Slide window: subtract value of outgoing char, multiply by base, add value of incoming char.",
+        "3. Compare window hash with pattern hash. If equal, verify."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def rabin_karp(text, pattern):\n  # Simplified logic\n  p_hash = hash(pattern)\n  t_hash = hash(text[:len(pattern)])\n  for i in range(len(text) - len(pattern) + 1):\n    if p_hash == t_hash and text[i:i+len(pattern)] == pattern:\n      return i\n    # Roll the hash (O(1) operation mathematically)\n    t_hash = roll_hash(t_hash, text[i], text[i+len(pattern)])\n  return -1</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N+M) average, O(N*M) worst case (collisions). Space: O(1)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Text:   A B C D E     Pattern: C D E\nHash(ABC) = H1\nHash(BCD) = (H1 - A*k) * p + D = H2\nHash(CDE) = (H2 - B*k) * p + E = H3 == Hash(Pattern)!</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

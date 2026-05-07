@@ -1,0 +1,49 @@
+{
+  "id": "tries",
+  "icon": "🔤",
+  "t": "Tries (Prefix Trees)",
+  "s": "Autosuggest, Word Search",
+  "sec": "trees",
+  "lv": "advanced",
+  "d": "A tree used to store associative data structures. A node's position defines the key with which it is associated.",
+  "c": [
+    "Implement Trie",
+    "Design Add and Search Words Data Structure",
+    "Word Search II"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "A Trie (Prefix Tree) is a specialized tree where each node represents a character. It provides blazing fast O(L) time complexity for word lookups and prefix matching (like autocomplete), where L is word length."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Node contains an array/hashmap of children and a boolean `is_word`.",
+        "2. Insert: iterate chars, create nodes if missing.",
+        "3. Search: iterate chars, if child missing return False."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>class TrieNode:\n  def __init__(self):\n    self.children = {}\n    self.is_word = False\n\nclass Trie:\n  def __init__(self):\n    self.root = TrieNode()\n    \n  def insert(self, word):\n    curr = self.root\n    for c in word:\n      if c not in curr.children:\n        curr.children[c] = TrieNode()\n      curr = curr.children[c]\n    curr.is_word = True</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(L) for insert/search. Space: O(Total characters inserted)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">       (root)\n      /      \\\n    (c)      (d)\n    /          \\\n  (a)          (o)\n  /              \\\n(t)*             (g)*\nWords: \"cat\", \"dog\"</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

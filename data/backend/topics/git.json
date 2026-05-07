@@ -1,0 +1,72 @@
+{
+  "id": "git",
+  "icon": "📦",
+  "t": "Git & Version Control",
+  "s": "Branching, merging, rebasing, collaboration workflows",
+  "sec": "foundations",
+  "lv": "core",
+  "d": "Git tracks every change in your codebase. It's not optional — every team uses it. Understanding branching strategies, merge vs rebase, resolving conflicts, and pull request workflows is essential for professional collaboration.",
+  "c": [
+    "<code>git init clone add commit push pull</code>",
+    "Branching & merging strategies",
+    "Rebasing vs merging",
+    "Resolving merge conflicts",
+    "Git Flow vs Trunk-based development",
+    "Interactive rebase (<code>git rebase -i</code>)",
+    "<code>.gitignore</code> patterns",
+    "Tags & semantic versioning",
+    "Cherry-pick & stash",
+    "GitHub/GitLab pull request workflow"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Git is a distributed version control system. It tracks changes to files over time using a Directed Acyclic Graph (DAG) of commits. It enables multiple developers to collaborate without overwriting each other's work."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Modify files in Working Directory.",
+        "2. `git add` to move to Staging Area.",
+        "3. `git commit` to save to Local Repo.",
+        "4. `git push` to upload to Remote Repo (GitHub)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Create and switch to new branch\ngit checkout -b feature/auth\n\n# Interactively rebase the last 3 commits\ngit rebase -i HEAD~3</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">(Remote: origin/main)\n       |\n[Commit C] &lt;-- (Local: main)\n   |  \\\n[B]   [D] &lt;-- (Feature Branch)\n |\n[A]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Learn Git Branching (interactive)",
+      "u": "https://learngitbranching.js.org"
+    },
+    {
+      "t": "Pro Git Book (free)",
+      "u": "https://git-scm.com/book"
+    },
+    {
+      "t": "Oh Shit, Git!?!",
+      "u": "https://ohshitgit.com"
+    },
+    {
+      "t": "GitHub Skills",
+      "u": "https://skills.github.com"
+    },
+    {
+      "t": "Conventional Commits",
+      "u": "https://www.conventionalcommits.org"
+    }
+  ]
+}

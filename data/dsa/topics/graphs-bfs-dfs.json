@@ -1,0 +1,26 @@
+{
+  "id": "graphs-bfs-dfs",
+  "icon": "🕸️",
+  "t": "Graphs: BFS & DFS",
+  "s": "Adjacency lists, islands, shortest path",
+  "sec": "trees",
+  "lv": "advanced",
+  "d": "Graphs represent networks of nodes (vertices) and connections (edges). BFS explores level-by-level (best for shortest path), while DFS explores as far as possible along each branch.",
+  "c": [
+    "Number of Islands",
+    "Clone Graph",
+    "Max Area of Island",
+    "Rotting Oranges",
+    "Word Ladder"
+  ],
+  "dd": [
+    {
+      "t": "Graph representations",
+      "p": [
+        "Adjacency List: Map<Node, List<Node>>. Most common and efficient for sparse graphs.",
+        "Adjacency Matrix: 2D array. Good for dense graphs but uses O(V²) space."
+      ]
+    }
+  ],
+  "l": []
+}

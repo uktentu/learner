@@ -1,0 +1,22 @@
+{
+  "id": "knapsack",
+  "icon": "🎒",
+  "t": "0/1 Knapsack Pattern",
+  "s": "Subset sum, partition equal subset",
+  "sec": "dp",
+  "lv": "advanced",
+  "d": "The classic DP problem: given weights and values of n items, put these items in a knapsack of capacity W to get the maximum total value. An item is either taken or not (0/1).",
+  "c": [
+    "Partition Equal Subset Sum",
+    "Target Sum"
+  ],
+  "dd": [
+    {
+      "t": "Identification",
+      "p": [
+        "You are given a set of items, and you need to choose a subset that maximizes a value or meets a specific sum constraint."
+      ]
+    }
+  ],
+  "l": []
+}

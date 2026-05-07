@@ -1,0 +1,52 @@
+{
+  "id": "backtracking",
+  "icon": "🔙",
+  "t": "Backtracking",
+  "s": "Permutations, Combinations, DFS",
+  "sec": "advanced",
+  "lv": "important",
+  "d": "Algorithm for finding all (or some) solutions to computational problems by incrementally building candidates and abandoning them if they cannot lead to a valid solution.",
+  "c": [
+    "Subsets",
+    "Permutations",
+    "Combination Sum",
+    "N-Queens",
+    "Word Search"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Backtracking is DFS on a decision tree. It's used for Permutations, Combinations, and Subsets. You make a choice, recurse, then UNDO the choice so the sibling branch can try something else."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. If current path meets goal, append copy of path to results.",
+        "2. Iterate through available choices.",
+        "3. Add choice to path. Recursively call backtrack.",
+        "4. Pop choice from path (Backtrack step)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def subsets(nums):\n  res = []\n  def backtrack(i, subset):\n    if i == len(nums):\n      res.append(subset.copy())\n      return\n    # Decision to include nums[i]\n    subset.append(nums[i])\n    backtrack(i + 1, subset)\n    # Decision NOT to include nums[i] (Backtrack)\n    subset.pop()\n    backtrack(i + 1, subset)\n    \n  backtrack(0, [])\n  return res</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N * 2^N) for Subsets, O(N * N!) for Permutations. Space: O(N) for recursion stack."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Subsets of {1, 2}:\n         [ ]\n       /     \\\n    [1]       [ ]\n   /   \\     /   \\\n[1,2]  [1] [2]   [ ]</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

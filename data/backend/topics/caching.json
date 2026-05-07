@@ -1,0 +1,68 @@
+{
+  "id": "caching",
+  "icon": "⚡",
+  "t": "Caching Strategies",
+  "s": "Redis, CDN, HTTP caching, cache invalidation, patterns",
+  "sec": "architecture",
+  "lv": "important",
+  "d": "Caching is the single most impactful performance optimization. Redis stores data in-memory for microsecond reads. CDNs cache assets globally. HTTP headers prevent unnecessary requests. But cache invalidation is genuinely one of the hardest problems in CS.",
+  "c": [
+    "Redis data types: <code>String Hash List Set ZSet Stream</code>",
+    "Cache-aside (lazy loading) pattern",
+    "Write-through vs Write-behind caching",
+    "TTL (Time-to-Live) strategies",
+    "Cache stampede & mutex locks",
+    "CDN edge caching (Cloudflare, CloudFront)",
+    "HTTP caching: <code>Cache-Control ETag Last-Modified</code>",
+    "Cache invalidation strategies",
+    "Application-level caching (memoization)",
+    "Distributed caching (Redis Cluster)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Caching stores copies of frequently accessed data in extremely fast, in-memory datastores (like Redis or Memcached) to reduce database load and speed up API response times."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. App receives request.",
+        "2. Check cache (Cache Hit?). If yes, return data immediately.",
+        "3. If no (Cache Miss), query primary DB.",
+        "4. Save DB result to cache with a TTL (Time To Live), then return."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Cache Aside Pattern\nconst cachedUser = await redis.get(`user:${id}`);\nif (cachedUser) return JSON.parse(cachedUser);\n\nconst user = await db.users.findById(id);\nawait redis.setex(`user:${id}`, 3600, JSON.stringify(user)); // 1 hour TTL\nreturn user;</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[App] ---&gt; (1. Check Cache)\n  |  \\---&gt; (2. Found! Return FAST)\n  |\n  v\n(3. Miss! Query slow DB)\n(4. Save to Cache)\n(5. Return to App)</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Redis Official Docs",
+      "u": "https://redis.io/docs"
+    },
+    {
+      "t": "Redis University (free)",
+      "u": "https://university.redis.com"
+    },
+    {
+      "t": "Caching Strategies Guide",
+      "u": "https://aws.amazon.com/caching/best-practices/"
+    },
+    {
+      "t": "HTTP Caching (MDN)",
+      "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching"
+    }
+  ]
+}

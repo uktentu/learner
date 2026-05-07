@@ -1,0 +1,52 @@
+{
+  "id": "graphs-basics",
+  "icon": "🕸️",
+  "t": "Graphs: BFS & DFS",
+  "s": "Islands, Matrices, Adjacency Lists",
+  "sec": "graphs",
+  "lv": "core",
+  "d": "Representing relationships between entities. BFS finds shortest paths in unweighted graphs. DFS is for exhaustive search.",
+  "c": [
+    "Number of Islands",
+    "Max Area of Island",
+    "Clone Graph",
+    "Rotting Oranges",
+    "Word Ladder"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Graphs are represented using Adjacency Lists (HashMap of Node -> List of Neighbors). BFS (Queue) explores outwards in rings, perfect for Shortest Path. DFS (Stack/Recursion) explores deep into dead ends, perfect for connected components."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Build the adjacency list from edges.",
+        "2. Initialize a `visited` set to prevent infinite loops.",
+        "3. BFS: Use a deque, popleft, add neighbors.",
+        "4. DFS: Recursive call on all unvisited neighbors."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def dfs(node, adj, visited):\n  if node in visited: return\n  visited.add(node)\n  print(node)\n  for neighbor in adj[node]:\n    dfs(neighbor, adj, visited)</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(V + E) where V is vertices, E is edges. Space: O(V + E)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Adjacency List:      Adjacency Matrix:\nA -&gt; [B, C]          A  B  C\nB -&gt; [A, C]        A[0  1  1]\nC -&gt; [A, B]        B[1  0  1]\n                   C[1  1  0]</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

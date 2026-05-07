@@ -1,0 +1,76 @@
+{
+  "id": "prog-langs",
+  "icon": "🔤",
+  "t": "Programming Languages",
+  "s": "Python, Node.js, Java, Go, Rust — pick your weapon",
+  "sec": "foundations",
+  "lv": "core",
+  "d": "Pick ONE language and master it deeply before learning others. Each has strengths: Python for simplicity and data, Node.js for async I/O, Java/C# for enterprise, Go for performance and concurrency, Rust for safety. Your language choice matters less than your depth of understanding.",
+  "c": [
+    "Python (Django, Flask, FastAPI)",
+    "JavaScript/Node.js (Express, Fastify, NestJS)",
+    "Java (Spring Boot, Quarkus)",
+    "Go (Gin, Echo, standard library)",
+    "C# (.NET, ASP.NET Core)",
+    "Rust (Actix, Axum)",
+    "Ruby (Rails)",
+    "PHP (Laravel)",
+    "TypeScript (type safety for Node.js)",
+    "Choosing your first language"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Backend logic is written in server-side programming languages. Languages differ by typing (static vs dynamic), execution (compiled vs interpreted), and concurrency models (threads vs event loops)."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Node.js (JS): Async event loop, great for I/O bound tasks.",
+        "2. Go: Goroutines, compiled, great for microservices.",
+        "3. Java: JVM, heavily object-oriented, enterprise standard.",
+        "4. Python: Highly readable, immense data science ecosystem."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Node.js Express Example\napp.get('/api/users', async (req, res) =&gt; {\n  const users = await db.query('SELECT * FROM users');\n  res.json(users);\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Interpreted (Python/JS): Code -&gt; Interpreter -&gt; CPU\nCompiled (Go/Rust): Code -&gt; Compiler -&gt; Binary -&gt; CPU\nBytecode (Java/C#): Code -&gt; Compiler -&gt; Bytecode -&gt; Virtual Machine -&gt; CPU</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Python Official Tutorial",
+      "u": "https://docs.python.org/3/tutorial/"
+    },
+    {
+      "t": "Node.js Getting Started",
+      "u": "https://nodejs.org/en/learn"
+    },
+    {
+      "t": "Go by Example",
+      "u": "https://gobyexample.com"
+    },
+    {
+      "t": "Spring Boot Quickstart",
+      "u": "https://spring.io/quickstart"
+    },
+    {
+      "t": "Rust Book",
+      "u": "https://doc.rust-lang.org/book/"
+    },
+    {
+      "t": "Backend Language Comparison",
+      "u": "https://roadmap.sh/backend/languages"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "id": "testing",
+  "icon": "🧪",
+  "t": "Testing Strategies",
+  "s": "Unit, integration, E2E, TDD, mocking, test pyramid",
+  "sec": "infrastructure",
+  "lv": "important",
+  "d": "Untested code is a liability. The testing pyramid: many unit tests (fast), fewer integration tests (realistic), few E2E tests (full flow). Tests give you confidence to refactor and ship. Every professional team expects test coverage.",
+  "c": [
+    "Unit tests (isolated, fast, mock dependencies)",
+    "Integration tests (test DB, APIs together)",
+    "E2E tests (Playwright, Cypress, Selenium)",
+    "Test-Driven Development (TDD)",
+    "Mocking, stubbing & spying",
+    "Test coverage metrics",
+    "Pytest (Python) / Jest (JS) / JUnit (Java)",
+    "Test fixtures & factories",
+    "Contract testing (Pact)",
+    "Load/stress testing (k6, Artillery, JMeter)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Testing is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Testing\nclass TestingManager {\n  initialize() {\n    console.log(\"Setting up Testing systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Testing Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Pytest Documentation",
+      "u": "https://docs.pytest.org"
+    },
+    {
+      "t": "Jest Getting Started",
+      "u": "https://jestjs.io/docs/getting-started"
+    },
+    {
+      "t": "Fowler: Test Pyramid",
+      "u": "https://martinfowler.com/bliki/TestPyramid.html"
+    },
+    {
+      "t": "k6 Load Testing",
+      "u": "https://k6.io/docs/"
+    },
+    {
+      "t": "Testing Trophy (Kent C. Dodds)",
+      "u": "https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  {"name":"Phase 1: Foundations","desc":"Build your base — understand how the internet works, get comfortable with Linux and terminal, learn Git.","est":"2–3 weeks","topics":["internet","os-linux","terminal","git"]},
+  {"name":"Phase 2: Pick a Language","desc":"Choose one backend language and learn it deeply. Python, JavaScript (Node.js), Java, or Go are great choices.","est":"4–6 weeks","topics":["prog-langs"]},
+  {"name":"Phase 3: Core Backend","desc":"Learn HTTP, build REST APIs, connect to databases, implement authentication. This is where you become a backend developer.","est":"6–8 weeks","topics":["http","rest","sql-db","nosql-db","orm","auth"]},
+  {"name":"Phase 4: Security & APIs","desc":"Secure your applications, explore GraphQL, learn API design best practices.","est":"3–4 weeks","topics":["web-security","graphql","api-design"]},
+  {"name":"Phase 5: Architecture","desc":"Structure your code properly. Learn caching, queues, real-time communication, and server patterns.","est":"4–6 weeks","topics":["server-arch","design-patterns","caching","message-queues","websockets"]},
+  {"name":"Phase 6: DevOps & Infra","desc":"Containerize, automate testing, set up CI/CD, monitor your apps in production.","est":"4–6 weeks","topics":["web-servers","docker","cicd","testing","monitoring","cloud"]},
+  {"name":"Phase 7: Scale & System Design","desc":"Think at scale. Learn system design, concurrency, microservices, and database scaling.","est":"Ongoing","topics":["system-design","concurrency","microservices","db-scaling","performance"]},
+  {"name":"Phase 8: Specialization","desc":"Go deep into areas that interest you or your career demands.","est":"Ongoing","topics":["kubernetes","serverless","grpc","search-engines","graphdb","event-sourcing","api-gateway","networking","wasm","ai-backend"]}
+]

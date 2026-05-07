@@ -1,0 +1,53 @@
+{
+  "id": "bit-manipulation",
+  "icon": "1️⃣",
+  "t": "Bit Manipulation",
+  "s": "XOR, Shifts, Masks",
+  "sec": "basics",
+  "lv": "important",
+  "d": "Direct manipulation of bits using bitwise operators. Extremely fast and memory efficient.",
+  "c": [
+    "AND, OR, XOR, NOT",
+    "Left/Right Shifts",
+    "Checking if a bit is set",
+    "Counting set bits (Brian Kernighan's)",
+    "Single Number (XOR property)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Computers operate on binary bits (0s and 1s). Bit manipulation uses operators like AND (&), OR (|), XOR (^), and shifts (<<, >>) to perform calculations extremely efficiently at the hardware level."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "AND: 1 if both bits are 1.",
+        "OR: 1 if at least one bit is 1.",
+        "XOR: 1 if bits are different.",
+        "Left Shift (<<): Multiply by 2.",
+        "Right Shift (>>): Divide by 2."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def singleNumber(nums):\n  res = 0\n  for n in nums:\n    res = res ^ n # XOR cancels out duplicates\n  return res\n\n# Count set bits (Brian Kernighan's)\nwhile n:\n  n &= (n - 1) # clears lowest set bit\n  count += 1</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(1) or O(N) depending on array size. Space: O(1) always."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">x       : 0101 (5)\ny       : 0011 (3)\n------------------\nx & y   : 0001 (1) -&gt; AND\nx | y   : 0111 (7) -&gt; OR\nx ^ y   : 0110 (6) -&gt; XOR\nx &lt;&lt; 1  : 1010 (10)-&gt; Left Shift</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

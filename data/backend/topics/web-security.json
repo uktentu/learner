@@ -1,0 +1,72 @@
+{
+  "id": "web-security",
+  "icon": "🛡️",
+  "t": "Web Security",
+  "s": "OWASP Top 10, SQL injection, XSS, CSRF, rate limiting",
+  "sec": "security",
+  "lv": "core",
+  "d": "Security isn't optional. The OWASP Top 10 lists the most critical web vulnerabilities. SQL injection, XSS, CSRF, and broken access control are actively exploited in the wild. Every backend dev must know how to prevent them.",
+  "c": [
+    "OWASP Top 10 vulnerabilities",
+    "SQL Injection prevention (parameterized queries)",
+    "XSS (Cross-Site Scripting) prevention",
+    "CSRF tokens & SameSite cookies",
+    "Rate limiting & throttling",
+    "Input validation & sanitization",
+    "Security headers (CSP, HSTS, X-Frame-Options)",
+    "Secrets management (env vars, HashiCorp Vault)",
+    "HTTPS everywhere & TLS certificates",
+    "Dependency vulnerability scanning"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Securing APIs against OWASP Top 10 vulnerabilities is mandatory. This includes preventing SQL Injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF)."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Use prepared statements/ORMs to prevent SQLi.",
+        "2. Sanitize user input and encode output to prevent XSS.",
+        "3. Use Anti-CSRF tokens for form submissions.",
+        "4. Enforce CORS policies and Content Security Policy (CSP)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// BAD: SQL Injection vulnerable\ndb.query(\"SELECT * FROM users WHERE id = \" + req.query.id);\n\n// GOOD: Parameterized\ndb.query(\"SELECT * FROM users WHERE id = $1\", [req.query.id]);</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">SQL Injection Example:\nInput:   admin' OR '1'='1\nQuery:   SELECT * FROM users WHERE user='admin' OR '1'='1'\nResult:  Attacker logs in as admin!\nFix:     Use Parameterized Queries.</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "OWASP Top 10",
+      "u": "https://owasp.org/www-project-top-ten"
+    },
+    {
+      "t": "OWASP Cheat Sheets",
+      "u": "https://cheatsheetseries.owasp.org"
+    },
+    {
+      "t": "Web Security Academy",
+      "u": "https://portswigger.net/web-security"
+    },
+    {
+      "t": "Snyk Vulnerability DB",
+      "u": "https://security.snyk.io"
+    },
+    {
+      "t": "Mozilla Observatory",
+      "u": "https://observatory.mozilla.org"
+    }
+  ]
+}

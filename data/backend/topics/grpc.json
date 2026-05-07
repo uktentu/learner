@@ -1,0 +1,74 @@
+{
+  "id": "grpc",
+  "icon": "📡",
+  "t": "gRPC & Protocol Buffers",
+  "s": "Binary protocol, service definitions, streaming, high performance",
+  "sec": "optional",
+  "lv": "optional",
+  "d": "gRPC is a high-performance RPC framework using Protocol Buffers for serialization. It's faster than REST/JSON, supports streaming, and auto-generates client/server code. Used heavily in microservice communication and by companies like Google, Netflix.",
+  "c": [
+    "Protocol Buffers (protobuf) schema language",
+    "Service definitions & code generation",
+    "Unary, server-streaming, client-streaming, bidirectional RPCs",
+    "HTTP/2 transport (multiplexing, header compression)",
+    "gRPC vs REST performance comparison",
+    "gRPC-Web for browser clients",
+    "Error handling & status codes",
+    "Deadlines & cancellation",
+    "Load balancing strategies",
+    "Interceptors (middleware equivalent)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Grpc is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Grpc\nclass GrpcManager {\n  initialize() {\n    console.log(\"Setting up Grpc systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Grpc Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "gRPC Official Docs",
+      "u": "https://grpc.io/docs/"
+    },
+    {
+      "t": "Protocol Buffers Guide",
+      "u": "https://protobuf.dev/programming-guides/proto3/"
+    },
+    {
+      "t": "gRPC Go Tutorial",
+      "u": "https://grpc.io/docs/languages/go/basics/"
+    },
+    {
+      "t": "Buf (protobuf tooling)",
+      "u": "https://buf.build/docs/"
+    }
+  ]
+}

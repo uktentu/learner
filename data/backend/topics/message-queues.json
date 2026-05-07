@@ -1,0 +1,72 @@
+{
+  "id": "message-queues",
+  "icon": "📨",
+  "t": "Message Queues & Events",
+  "s": "Kafka, RabbitMQ, SQS, async processing, event-driven",
+  "sec": "architecture",
+  "lv": "important",
+  "d": "Not everything should happen in an HTTP request. Queues decouple services, handle backpressure, and enable retry logic. Kafka enables event streaming for real-time pipelines. Essential for resilient, scalable systems.",
+  "c": [
+    "Producer / Consumer / Broker model",
+    "Queue vs Topic vs Stream",
+    "RabbitMQ: exchanges, routing keys, bindings",
+    "Kafka: partitions, consumer groups, offsets",
+    "Dead Letter Queue (DLQ)",
+    "At-least-once vs exactly-once delivery",
+    "Idempotent consumers",
+    "Background job queues (BullMQ, Celery, Sidekiq)",
+    "Event-driven architecture",
+    "Saga pattern for distributed transactions"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Message Queues (RabbitMQ, SQS) decouple services and manage background jobs. Instead of processing a heavy task during the HTTP request, the backend drops a 'message' in a queue and returns immediately."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Producer sends a message to the Queue.",
+        "2. The Queue safely stores the message until it's processed.",
+        "3. Consumer(s) pull messages from the Queue and process them at their own pace.",
+        "4. Essential for sending emails, video encoding, or scaling microservices."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Producer\nchannel.sendToQueue('email_task', Buffer.from(JSON.stringify(data)));\nres.send('Email queued for sending');\n\n// Consumer\nchannel.consume('email_task', (msg) =&gt; {\n  sendEmail(JSON.parse(msg.content));\n  channel.ack(msg); // Acknowledge completion\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[Web Server] (Producer)\n     | (Drops message: \"Send Email to Alice\")\n[ Message Queue (RabbitMQ) ]\n     | (Pulls message when ready)\n[Worker Node] (Consumer) -&gt; Sends Email</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "RabbitMQ Tutorials",
+      "u": "https://www.rabbitmq.com/tutorials"
+    },
+    {
+      "t": "Kafka Documentation",
+      "u": "https://kafka.apache.org/documentation"
+    },
+    {
+      "t": "BullMQ (Node.js)",
+      "u": "https://docs.bullmq.io"
+    },
+    {
+      "t": "Celery Docs (Python)",
+      "u": "https://docs.celeryq.dev"
+    },
+    {
+      "t": "AWS SQS Guide",
+      "u": "https://docs.aws.amazon.com/sqs/"
+    }
+  ]
+}

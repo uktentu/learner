@@ -1,0 +1,51 @@
+{
+  "id": "fast-slow-pointers",
+  "icon": "🐢🐇",
+  "t": "Fast & Slow Pointers",
+  "s": "Floyd's Cycle Detection",
+  "sec": "linked-list",
+  "lv": "important",
+  "d": "Using two pointers moving at different speeds to detect cycles or find midpoints.",
+  "c": [
+    "Linked List Cycle",
+    "Linked List Cycle II (Find cycle start)",
+    "Middle of the Linked List",
+    "Find the Duplicate Number"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Floyd's Cycle Finding Algorithm uses two pointers moving at different speeds (usually 1x and 2x). If there is a cycle, the fast pointer will eventually 'lap' the slow pointer and they will meet."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. `slow = head`, `fast = head`.",
+        "2. `while fast and fast.next:`",
+        "3. `slow = slow.next`, `fast = fast.next.next`.",
+        "4. If `slow == fast`, a cycle exists."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def hasCycle(head):\n  slow, fast = head, head\n  while fast and fast.next:\n    slow = slow.next\n    fast = fast.next.next\n    if slow == fast:\n      return True\n  return False</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) to traverse or find cycle. Space: O(1)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">      (Slow)\n        ↓\n(1) -&gt; (2) -&gt; (3)\n        ↑      |\n      (5) &lt;- (4)\n        ↑\n      (Fast)\nFast moves 2x, Slow moves 1x. They meet at (5)!</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

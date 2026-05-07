@@ -1,0 +1,66 @@
+{
+  "id": "terminal",
+  "icon": "💻",
+  "t": "Terminal & Shell",
+  "s": "Bash, Zsh, piping, scripting, productivity",
+  "sec": "foundations",
+  "lv": "core",
+  "d": "The terminal is your primary tool as a backend dev. Shell scripting automates repetitive tasks, piping chains commands together, and proficiency here makes you 10x faster at debugging, deploying, and managing servers.",
+  "c": [
+    "Bash vs Zsh vs Fish",
+    "Piping & redirection (<code>| > >> 2>&1</code>)",
+    "Shell scripting basics",
+    "Command chaining (<code>&& || ;</code>)",
+    "Aliases & shell config (.bashrc/.zshrc)",
+    "Job control (<code>bg fg &amp; nohup</code>)",
+    "Text processing (<code>grep sed awk cut sort uniq</code>)",
+    "tmux / screen for session management"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "The Command Line Interface (CLI) allows you to interact directly with the OS without a GUI. It is much faster and scriptable, which is essential for remote server management (SSH)."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Navigation: cd, ls, pwd",
+        "2. File manipulation: cp, mv, rm, mkdir",
+        "3. Text processing: grep, awk, sed",
+        "4. Network: curl, ping, netstat"
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Search for \"ERROR\" in all log files in current dir\ngrep -r \"ERROR\" *.log\n\n# View file contents in real-time as it updates\ntail -f application.log</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[User input] -&gt; Shell (Bash/Zsh) -&gt; OS Kernel\n$ ls -l | grep \"app\"\n(ls output) --pipe--&gt; (grep filters) -&gt; Screen</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Bash Scripting Tutorial",
+      "u": "https://www.shellscript.sh"
+    },
+    {
+      "t": "ExplainShell",
+      "u": "https://explainshell.com"
+    },
+    {
+      "t": "tldr pages (simplified man)",
+      "u": "https://tldr.sh"
+    },
+    {
+      "t": "The Art of Command Line",
+      "u": "https://github.com/jlevy/the-art-of-command-line"
+    }
+  ]
+}

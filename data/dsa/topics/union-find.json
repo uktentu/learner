@@ -1,0 +1,49 @@
+{
+  "id": "union-find",
+  "icon": "🔗",
+  "t": "Disjoint Set (Union Find)",
+  "s": "Connected components",
+  "sec": "graphs",
+  "lv": "advanced",
+  "d": "A data structure that tracks a set of elements partitioned into a number of disjoint (non-overlapping) subsets.",
+  "c": [
+    "Number of Connected Components",
+    "Redundant Connection",
+    "Accounts Merge",
+    "Graph Valid Tree"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Union-Find (Disjoint Set) tracks distinct sets of elements. It is extremely fast for finding if two elements are in the same set, and for merging sets. Path Compression flattens the tree, making it O(1)."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. `find(x)`: recursively find the root parent. Point node directly to root (Path Compression).",
+        "2. `union(x, y)`: find roots of x and y. Make the root with higher rank the parent of the other (Union by Rank)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>class UnionFind:\n  def __init__(self, n):\n    self.par = [i for i in range(n)]\n    self.rank = [1] * n\n\n  def find(self, n1):\n    res = n1\n    while res != self.par[res]:\n      self.par[res] = self.par[self.par[res]] # Path compression\n      res = self.par[res]\n    return res\n\n  def union(self, n1, n2):\n    p1, p2 = self.find(n1), self.find(n2)\n    if p1 == p2: return False\n    if self.rank[p1] &gt; self.rank[p2]:\n      self.par[p2] = p1\n    else:\n      self.par[p1] = p2\n      self.rank[p2] += self.rank[p1]\n    return True</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: Amortized O(1) (Inverse Ackermann). Space: O(V)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Initial: {A} {B} {C} {D}\nUnion(A, B): {A, B} {C} {D}\nUnion(C, D): {A, B} {C, D}\nUnion(B, C): {A, B, C, D} -&gt; All connected!</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

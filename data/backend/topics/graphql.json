@@ -1,0 +1,68 @@
+{
+  "id": "graphql",
+  "icon": "◈",
+  "t": "GraphQL",
+  "s": "Schema, resolvers, queries, mutations, subscriptions",
+  "sec": "core",
+  "lv": "important",
+  "d": "GraphQL lets clients request exactly the data they need from a single endpoint. It eliminates over-fetching and under-fetching problems of REST. Essential for complex frontends and mobile apps with varying data needs.",
+  "c": [
+    "Single endpoint: <code>POST /graphql</code>",
+    "Schema Definition Language (SDL)",
+    "Queries, Mutations, Subscriptions",
+    "Resolvers & data fetching",
+    "N+1 problem & DataLoader pattern",
+    "Fragments & variables",
+    "Introspection & schema documentation",
+    "Apollo Server / Yoga / Hasura",
+    "GraphQL vs REST trade-offs",
+    "Authentication in GraphQL"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "GraphQL is a query language for APIs that allows clients to request exactly the data they need and nothing more. It solves the 'Over-fetching' and 'Under-fetching' problems of REST."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Server defines a strongly typed Schema (Types, Queries, Mutations).",
+        "2. Server defines Resolvers (functions to fetch data for fields).",
+        "3. Client sends a query specifying exact fields.",
+        "4. Server responds with a JSON matching the query shape exactly."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// GraphQL Type Definition\ntype User {\n  id: ID!\n  name: String!\n  posts: [Post]\n}\n// Client only asks for name, saves bandwidth!</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Client Request:                  Server Response:\nquery {                          {\n  user(id: 1) {                    \"data\": {\n    name                             \"user\": {\n    posts { title }                    \"name\": \"Alice\",\n  }                                    \"posts\": [{\"title\": \"Hello\"}]\n}                                    }\n                                 }</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "GraphQL Official Docs",
+      "u": "https://graphql.org/learn"
+    },
+    {
+      "t": "Apollo GraphQL Tutorials",
+      "u": "https://www.apollographql.com/tutorials"
+    },
+    {
+      "t": "How to GraphQL",
+      "u": "https://www.howtographql.com"
+    },
+    {
+      "t": "GraphQL Best Practices",
+      "u": "https://graphql.org/learn/best-practices/"
+    }
+  ]
+}

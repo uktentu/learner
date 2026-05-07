@@ -1,0 +1,67 @@
+{
+  "id": "rate-limiting",
+  "icon": "🚦",
+  "t": "Rate Limiting & Throttling",
+  "s": "Token bucket, sliding window, API quotas, DDoS protection",
+  "sec": "architecture",
+  "lv": "important",
+  "d": "Rate limiting protects your API from abuse, ensures fair usage, and prevents DDoS attacks. Understanding algorithms (token bucket, sliding window), implementation layers (application, gateway, CDN), and quota management is critical for production APIs.",
+  "c": [
+    "Token bucket algorithm",
+    "Sliding window counter",
+    "Fixed window counter",
+    "Leaky bucket algorithm",
+    "Rate limiting at different layers (app, gateway, CDN)",
+    "API quotas & tiered plans",
+    "DDoS mitigation (Cloudflare, AWS Shield)",
+    "Rate limit headers (<code>X-RateLimit-*</code>)",
+    "IP-based vs user-based vs API-key-based limiting",
+    "Distributed rate limiting (Redis-based)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Rate Limiting restricts the number of requests a client (IP or User) can make to an API within a specific time window. It prevents DDoS attacks, brute forcing, and resource exhaustion."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Token Bucket: Tokens are added to a bucket at a fixed rate. Requests consume tokens.",
+        "2. Fixed Window: Max X requests per minute. Resets at top of minute.",
+        "3. Sliding Window: More accurate windowing based on precise timestamps."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Express Rate Limit Middleware\nconst limiter = rateLimit({\n  windowMs: 15 * 60 * 1000, // 15 minutes\n  max: 100, // Limit each IP to 100 requests per windowMs\n  message: \"Too many requests, please try again later.\"\n});\napp.use('/api/', limiter);</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Token Bucket Algorithm:\nBucket Capacity: 5 tokens. Refill rate: 1 token/sec.\nRequest 1 -&gt; Takes token (4 left) -&gt; OK\nRequest 2-5 -&gt; Takes tokens (0 left) -&gt; OK\nRequest 6 -&gt; Bucket empty -&gt; 429 TOO MANY REQUESTS</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Rate Limiting Algorithms (blog)",
+      "u": "https://blog.bytebytego.com/p/rate-limiting-fundamentals"
+    },
+    {
+      "t": "Redis Rate Limiting",
+      "u": "https://redis.io/learn/develop/how-to/rate-limiting"
+    },
+    {
+      "t": "Cloudflare Rate Limiting",
+      "u": "https://developers.cloudflare.com/waf/rate-limiting-rules/"
+    },
+    {
+      "t": "Stripe Rate Limiting",
+      "u": "https://docs.stripe.com/rate-limits"
+    }
+  ]
+}

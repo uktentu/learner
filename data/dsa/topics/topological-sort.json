@@ -1,0 +1,50 @@
+{
+  "id": "topological-sort",
+  "icon": "📋",
+  "t": "Topological Sort",
+  "s": "Kahn's Algorithm, Dependency",
+  "sec": "graphs",
+  "lv": "important",
+  "d": "Ordering of a DAG where for every directed edge u -> v, vertex u comes before v.",
+  "c": [
+    "Course Schedule",
+    "Course Schedule II",
+    "Alien Dictionary"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Topological Sort applies to Directed Acyclic Graphs (DAGs). It outputs nodes such that if there's an edge A -> B, A appears before B. Kahn's Algorithm does this using in-degrees."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Calculate `in-degree` (incoming edges) for all nodes.",
+        "2. Push nodes with `in-degree == 0` to a queue.",
+        "3. Pop node, add to result, and decrement `in-degree` of its neighbors.",
+        "4. If neighbor's in-degree hits 0, push to queue."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def topoSort(numCourses, prerequisites):\n  indegree = {i: 0 for i in range(numCourses)}\n  adj = {i: [] for i in range(numCourses)}\n  for crs, pre in prerequisites:\n    adj[pre].append(crs)\n    indegree[crs] += 1\n    \n  q = deque([n for n in indegree if indegree[n] == 0])\n  res = []\n  while q:\n    curr = q.popleft()\n    res.append(curr)\n    for nei in adj[curr]:\n      indegree[nei] -= 1\n      if indegree[nei] == 0: q.append(nei)\n  return res if len(res) == numCourses else []</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(V + E). Space: O(V + E)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">(A) ---&gt; (C) ---&gt; (D)\n  \\      ↗\n   v   /\n    (B)\nOrder: A -&gt; B -&gt; C -&gt; D</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

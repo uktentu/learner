@@ -1,0 +1,68 @@
+{
+  "id": "websockets",
+  "icon": "🔌",
+  "t": "WebSockets & Real-time",
+  "s": "Socket.IO, SSE, WebSocket protocol, real-time patterns",
+  "sec": "architecture",
+  "lv": "important",
+  "d": "HTTP is request-response. WebSockets enable persistent, bidirectional communication — essential for chat, live notifications, real-time dashboards, collaborative editing, and gaming. Server-Sent Events (SSE) is simpler for server-to-client streaming.",
+  "c": [
+    "WebSocket protocol (ws:// and wss://)",
+    "Socket.IO (Node.js) & alternatives",
+    "Server-Sent Events (SSE)",
+    "Long polling (fallback pattern)",
+    "Pub/Sub for real-time broadcasting",
+    "Room/channel-based messaging",
+    "Connection management at scale",
+    "Scaling WebSockets (sticky sessions, Redis adapter)",
+    "WebRTC for peer-to-peer",
+    "Real-time database listeners (Firestore, Supabase)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "WebSockets provide full-duplex, persistent, bidirectional communication over a single TCP connection. Unlike HTTP (request-response), WebSockets allow the server to push data to the client instantly."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Client sends HTTP request with 'Upgrade: websocket' header.",
+        "2. Server agrees, connection is upgraded to WebSocket.",
+        "3. Both client and server can send/receive messages freely.",
+        "4. Used for Chat apps, Live tracking, Multiplayer games."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Socket.io Example (Server)\nio.on('connection', (socket) =&gt; {\n  console.log('User connected');\n  socket.on('chat_msg', (msg) =&gt; {\n    io.emit('chat_msg', msg); // Broadcast to everyone\n  });\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">HTTP (Polling):                   WebSocket:\nClient -&gt; \"Any news?\" -&gt; Server   Client &lt;======&gt; Server\nClient &lt;- \"No\"        &lt;-          (Persistent Connection)\nClient -&gt; \"Any news?\" -&gt; Server   Server -&gt; \"New msg!\" -&gt; Client\nClient &lt;- \"Yes!\"      &lt;-          Server -&gt; \"Typing...\" -&gt; Client</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Socket.IO Docs",
+      "u": "https://socket.io/docs"
+    },
+    {
+      "t": "MDN WebSocket API",
+      "u": "https://developer.mozilla.org/en-US/docs/Web/API/WebSocket"
+    },
+    {
+      "t": "SSE Guide (MDN)",
+      "u": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events"
+    },
+    {
+      "t": "WebSockets vs SSE",
+      "u": "https://ably.com/blog/websockets-vs-sse"
+    }
+  ]
+}

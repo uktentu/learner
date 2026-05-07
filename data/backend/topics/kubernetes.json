@@ -1,0 +1,68 @@
+{
+  "id": "kubernetes",
+  "icon": "☸️",
+  "t": "Kubernetes",
+  "s": "Pods, services, deployments, Helm, scaling, orchestration",
+  "sec": "optional",
+  "lv": "optional",
+  "d": "Kubernetes orchestrates containers at scale — automated deployment, scaling, and management. It's complex but industry-standard for production workloads. Start with Docker Compose, graduate to K8s when you need multi-node orchestration.",
+  "c": [
+    "Pods, Nodes, Clusters",
+    "Services & Ingress",
+    "Deployments & ReplicaSets",
+    "ConfigMaps & Secrets",
+    "Persistent Volumes & Claims",
+    "Helm charts (package manager)",
+    "Horizontal Pod Autoscaler",
+    "Namespaces & RBAC",
+    "Liveness & readiness probes",
+    "kubectl essential commands"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Kubernetes (K8s) is a container orchestration platform. If Docker runs a container, Kubernetes manages thousands of containers across multiple servers, handling auto-scaling, self-healing, and load balancing."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Pod: Smallest unit, holds one or more containers.",
+        "2. Deployment: Manages replicas of Pods (auto-scaling/restarts).",
+        "3. Service: Provides a stable IP/DNS to access Pods.",
+        "4. Ingress: Routes external HTTP traffic into the cluster."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>apiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: backend-app\nspec:\n  replicas: 3\n  selector:\n    matchLabels:\n      app: backend\n  template:\n    # Pod spec goes here</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ External Load Balancer / Ingress ]\n              |\n       [ K8s Service ]\n       /      |      \\\n [Pod 1]   [Pod 2]   [Pod 3] (Auto-scaled Replicas)\n (Node A)  (Node A)  (Node B)</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Kubernetes Basics Tutorial",
+      "u": "https://kubernetes.io/docs/tutorials/kubernetes-basics/"
+    },
+    {
+      "t": "Learn Kubernetes (interactive)",
+      "u": "https://kubernetes.io/docs/tutorials/"
+    },
+    {
+      "t": "Helm Documentation",
+      "u": "https://helm.sh/docs/"
+    },
+    {
+      "t": "KillerCoda K8s Labs",
+      "u": "https://killercoda.com/kubernetes"
+    }
+  ]
+}

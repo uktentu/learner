@@ -1,0 +1,52 @@
+{
+  "id": "binary-search",
+  "icon": "🔍",
+  "t": "Binary Search",
+  "s": "O(log n) search on sorted data",
+  "sec": "sorting",
+  "lv": "core",
+  "d": "Finding a target value within a sorted array by repeatedly dividing the search interval in half.",
+  "c": [
+    "Binary Search",
+    "Search a 2D Matrix",
+    "Find Minimum in Rotated Sorted Array",
+    "Search in Rotated Sorted Array",
+    "Koko Eating Bananas (Binary Search on Answer)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Binary Search finds a target in a SORTED array by dividing the search space in half. It reduces O(N) linear search to O(log N)."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. `left = 0`, `right = len - 1`.",
+        "2. `while left <= right:`",
+        "3. `mid = left + (right - left) // 2` (prevents integer overflow in Java/C++).",
+        "4. If target > mid value, search right (`left = mid + 1`). Else search left."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def binarySearch(nums, target):\n  l, r = 0, len(nums) - 1\n  while l &lt;= r:\n    m = l + ((r - l) // 2)\n    if nums[m] &gt; target:\n      r = m - 1\n    elif nums[m] &lt; target:\n      l = m + 1\n    else:\n      return m\n  return -1</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(log N). Space: O(1)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Target: 7\n[1, 2, 3, 4, 5, 6, 7, 8, 9]\n             ^ (Mid is 5 &lt; 7)\n               [6, 7, 8, 9]\n                   ^ (Mid is 7. Found!)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

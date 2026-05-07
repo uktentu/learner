@@ -1,0 +1,50 @@
+{
+  "id": "knapsack-01",
+  "icon": "🎒",
+  "t": "0/1 Knapsack",
+  "s": "Subset Sums",
+  "sec": "dp",
+  "lv": "advanced",
+  "d": "Given items with weights and values, maximize value within a capacity. Items can be chosen once or not at all.",
+  "c": [
+    "Partition Equal Subset Sum",
+    "Target Sum",
+    "Ones and Zeroes"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Given N items with weights and values, find the subset that maximizes value without exceeding a weight limit W. For each item, you make a binary choice: INCLUDE it or EXCLUDE it."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. State: `DP[i][w]` = max value using first `i` items and capacity `w`.",
+        "2. Exclude: `DP[i-1][w]`",
+        "3. Include: `values[i] + DP[i-1][w - weights[i]]`",
+        "4. `DP[i][w] = max(Exclude, Include)`."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def knapsack(weights, values, capacity):\n  n = len(weights)\n  dp = [[0] * (capacity + 1) for _ in range(n + 1)]\n  \n  for i in range(1, n + 1):\n    for w in range(1, capacity + 1):\n      if weights[i-1] &lt;= w:\n        dp[i][w] = max(dp[i-1][w], values[i-1] + dp[i-1][w - weights[i-1]])\n      else:\n        dp[i][w] = dp[i-1][w]\n  return dp[n][capacity]</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N * Capacity). Space: O(N * Capacity)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">W=5. Items: (wt:2, v:3), (wt:3, v:4), (wt:4, v:5)\nDP Table (Weight vs Item):\n    0  1  2  3  4  5\nI1: 0  0  3  3  3  3\nI2: 0  0  3  4  4  7 (take I1 + I2)\nI3: 0  0  3  4  5  7</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA — Complete Learning Guide & Roadmap</title>
+    <meta name="description" content="The ultimate Data Structures & Algorithms learning guide. Master patterns, Blind 75, NeetCode, and technical interviews.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --accent: var(--green); /* DSA uses green as primary accent */
+            --accent2: #10b981;
+        }
+    </style>
+</head>
+<body data-dir="data/dsa" data-key="dsa_done">
+    <button class="mobile-toggle" id="mobileToggle" onclick="document.getElementById('sidebar').classList.toggle('open');document.getElementById('overlay').classList.toggle('show')">☰</button>
+    <div class="overlay" id="overlay" onclick="document.getElementById('sidebar').classList.remove('open');this.classList.remove('show')"></div>
+    <div class="app">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" style="text-decoration:none;color:var(--text3);font-size:11px;display:flex;align-items:center;gap:4px;margin-bottom:12px;transition:0.2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">← Back to Dashboard</a>
+                <div class="logo">DSA <span>Master</span> Guide</div>
+                <div style="font-size:11px;color:var(--text3);margin-top:.2rem">Ace your technical interviews</div>
+            </div>
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="Search algorithms…" oninput="filterTopics(this.value)">
+            </div>
+            <div class="progress-bar-wrap">
+                <div class="progress-label"><span>Progress</span><span id="progress-pct">0 / 0</span></div>
+                <div class="progress-track"><div class="progress-fill" id="progressBar"></div></div>
+            </div>
+            <div class="filter-wrap">
+                <button class="filter-btn active" onclick="setFilter('all',this)">All</button>
+                <button class="filter-btn" onclick="setFilter('core',this)">Core</button>
+                <button class="filter-btn" onclick="setFilter('important',this)">Important</button>
+                <button class="filter-btn" onclick="setFilter('advanced',this)">Advanced</button>
+                <button class="filter-btn" onclick="setFilter('optional',this)">Optional</button>
+            </div>
+            <nav id="sidebarNav"></nav>
+            <div class="sidebar-footer">Mark patterns done as you master them ✓</div>
+        </aside>
+        <main class="main" id="mainContent">
+            <div class="hero">
+                <div class="hero-badge">🧮 Complete DSA Guide</div>
+                <h1>Data Structures<br> & Algorithms</h1>
+                <p>Everything you need to crack top tech interviews. Learn the core patterns, master NeetCode/Blind 75, and stop memorizing solutions.</p>
+                <div class="stats-row">
+                    <div class="stat-card"><div class="num" style="color:var(--accent)" id="statTopics">0</div><div class="lbl">Patterns</div></div>
+                    <div class="stat-card"><div class="num" style="color:var(--green)" id="statConcepts">0</div><div class="lbl">Concepts</div></div>
+                    <div class="stat-card"><div class="num" style="color:var(--amber)" id="statLinks">0</div><div class="lbl">Resources</div></div>
+                    <div class="stat-card"><div class="num" style="color:var(--purple)" id="statDone">0%</div><div class="lbl">Completed</div></div>
+                </div>
+            </div>
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('topics',this)">📚 All Patterns</button>
+                <button class="tab-btn" onclick="switchTab('roadmap',this)">🗺️ Roadmap</button>
+                <button class="tab-btn" onclick="switchTab('reference',this)">⚡ Resources</button>
+            </div>
+            <div class="tab-content active" id="tab-topics"></div>
+            <div class="tab-content" id="tab-roadmap"></div>
+            <div class="tab-content" id="tab-reference"></div>
+        </main>
+        <aside class="right-panel" id="rightPanel">
+            <div class="rp-section" id="rpProgress"></div>
+            <div class="rp-section" id="rpBreakdown"></div>
+            <div class="rp-section" id="rpCurrentSection"></div>
+            <div class="rp-section rp-tips" id="rpTips"></div>
+        </aside>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

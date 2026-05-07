@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Master Guides Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .dashboard {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .dash-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .dash-hero p {
+            color: var(--text2);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+        .cards-grid {
+            display: flex;
+            gap: 2rem;
+            max-width: 1000px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .dash-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--r2);
+            padding: 2.5rem 2rem;
+            width: 320px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .dash-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: var(--accent);
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .dash-card.dsa::before { background: var(--green); }
+        .dash-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border2);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .dash-card:hover::before { opacity: 1; }
+        
+        .dash-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--bg3);
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+        }
+        .dash-title {
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .dash-desc {
+            font-size: 0.9rem;
+            color: var(--text2);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dash-hero">
+            <h1>Master Your Craft</h1>
+            <p>Select a learning path below to access comprehensive roadmaps, deep-dive technical explanations, and curated resources.</p>
+        </div>
+        
+        <div class="cards-grid">
+            <a href="backend.html" class="dash-card">
+                <div class="dash-icon">🚀</div>
+                <div class="dash-title">Backend Developer</div>
+                <div class="dash-desc">Master APIs, databases, architecture, cloud infrastructure, system design, and security. Everything from zero to production.</div>
+            </a>
+            
+            <a href="dsa.html" class="dash-card dsa">
+                <div class="dash-icon">🧮</div>
+                <div class="dash-title">Data Structures & Algorithms</div>
+                <div class="dash-desc">Conquer technical interviews. Arrays, graphs, dynamic programming, Blind 75, NeetCode patterns, and Striver's sheet.</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

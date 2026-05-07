@@ -1,0 +1,49 @@
+{
+  "id": "top-k",
+  "icon": "🏆",
+  "t": "Top K Elements",
+  "s": "Kth largest, Quickselect",
+  "sec": "heaps",
+  "lv": "important",
+  "d": "A very common interview pattern asking for the K largest/smallest elements.",
+  "c": [
+    "Kth Largest Element in an Array",
+    "Top K Frequent Elements",
+    "Top K Frequent Words"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "To find the Top K Largest elements, maintain a Min-Heap of size K. Why a Min-Heap for Largest? Because the root (smallest in the heap) acts as a threshold. If a new element is larger than the root, we pop the root and push the new element."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Insert first K elements into Min-Heap.",
+        "2. For remaining elements, if `element > heap[0]`, `heappop` and `heappush(element)`.",
+        "3. The heap now contains the Top K largest."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def findKthLargest(nums, k):\n  minHeap = nums[:k]\n  heapq.heapify(minHeap)\n  \n  for num in nums[k:]:\n    if num &gt; minHeap[0]:\n      heapq.heappop(minHeap)\n      heapq.heappush(minHeap, num)\n      \n  return minHeap[0]</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N log K). Better than O(N log N) sorting! Space: O(K) for the heap."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Array: [3, 1, 5, 12, 2, 11], K=3\nMin-Heap maintains top 3 largest elements:\nInsert 3: [3]\nInsert 1: [1, 3] -&gt; [3] (pop 1)\n...\nFinal Heap: [5, 11, 12]</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

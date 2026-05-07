@@ -1,0 +1,49 @@
+{
+  "id": "stacks-queues",
+  "icon": "📚",
+  "t": "Stacks & Queues",
+  "s": "LIFO, FIFO",
+  "sec": "stacks",
+  "lv": "core",
+  "d": "Fundamental data structures for managing order of processing.",
+  "c": [
+    "Valid Parentheses",
+    "Min Stack",
+    "Evaluate Reverse Polish Notation",
+    "Implement Queue using Stacks"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Stacks are Last-In-First-Out (LIFO), used for parsing (parentheses, reverse polish notation) and DFS. Queues are First-In-First-Out (FIFO), used for scheduling and BFS."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "Stack: Push to end, Pop from end (O(1)).",
+        "Queue: Push to end, Pop from front. In Python, use `collections.deque` for O(1) front pops."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def isValid(s):\n  stack = []\n  mapping = {')': '(', '}': '{', ']': '['}\n  for char in s:\n    if char in mapping:\n      if stack and stack[-1] == mapping[char]:\n        stack.pop()\n      else: return False\n    else:\n      stack.append(char)\n  return not stack</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N). Space: O(N)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Stack (LIFO):      Queue (FIFO):\n  | 3 | (Top)     (Back) [3][2][1] (Front)\n  | 2 |              -&gt; Push     -&gt; Pop\n  | 1 |\n  -----</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

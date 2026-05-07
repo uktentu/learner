@@ -1,0 +1,72 @@
+{
+  "id": "orm",
+  "icon": "🔧",
+  "t": "ORMs & Query Builders",
+  "s": "SQLAlchemy, Prisma, Hibernate, TypeORM, Drizzle",
+  "sec": "core",
+  "lv": "important",
+  "d": "ORMs map database tables to objects in your programming language. They speed up development and prevent SQL injection, but can introduce performance problems (N+1 queries). Know when to use raw SQL vs ORM.",
+  "c": [
+    "ORM vs Query Builder vs Raw SQL",
+    "N+1 query problem & eager loading",
+    "Database migrations & schema versioning",
+    "Model relationships (1:1, 1:N, M:N)",
+    "Prisma (Node.js) — type-safe, great DX",
+    "SQLAlchemy (Python) — flexible, powerful",
+    "Hibernate/JPA (Java) — enterprise standard",
+    "TypeORM / Drizzle (TypeScript)",
+    "Knex.js (query builder)",
+    "Active Record vs Data Mapper patterns"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Object-Relational Mapping (ORM) tools map database rows to object-oriented classes in your code. They abstract away raw SQL, making DB interactions safer (prevents SQL injection) and easier to write."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Define Models/Entities in code.",
+        "2. ORM generates the underlying SQL tables (Migrations).",
+        "3. Use ORM methods like `User.find()` instead of `SELECT * FROM users`.",
+        "4. Warning: Complex queries can suffer the 'N+1 Query Problem'."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Prisma ORM Example\nconst user = await prisma.user.create({\n  data: {\n    name: 'Alice',\n    email: 'alice@example.com',\n  },\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">App Code:             ORM Engine:            Database:\nuser.save()  ------&gt;  Generates SQL ------&gt;  INSERT INTO users...\n                      (Prisma/TypeORM)       (PostgreSQL)</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Prisma Docs",
+      "u": "https://www.prisma.io/docs"
+    },
+    {
+      "t": "SQLAlchemy Tutorial",
+      "u": "https://docs.sqlalchemy.org/en/20/tutorial/"
+    },
+    {
+      "t": "TypeORM Docs",
+      "u": "https://typeorm.io"
+    },
+    {
+      "t": "Drizzle ORM",
+      "u": "https://orm.drizzle.team"
+    },
+    {
+      "t": "Hibernate Getting Started",
+      "u": "https://hibernate.org/orm/documentation/getting-started/"
+    }
+  ]
+}

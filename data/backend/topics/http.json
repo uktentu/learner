@@ -1,0 +1,70 @@
+{
+  "id": "http",
+  "icon": "🌐",
+  "t": "HTTP & APIs",
+  "s": "Methods, status codes, headers, HTTPS, CORS",
+  "sec": "core",
+  "lv": "core",
+  "d": "HTTP is the protocol behind every web request. Understanding methods, status codes, headers, cookies, and the request-response cycle is fundamental. You'll deal with HTTP literally every day as a backend developer.",
+  "c": [
+    "Methods: <code>GET POST PUT PATCH DELETE OPTIONS HEAD</code>",
+    "Status codes: <code>2xx 3xx 4xx 5xx</code>",
+    "Headers: <code>Content-Type Authorization Cache-Control</code>",
+    "HTTP/1.1 vs HTTP/2 vs HTTP/3 (QUIC)",
+    "HTTPS & TLS handshake",
+    "Cookies, Sessions & Tokens",
+    "CORS (Cross-Origin Resource Sharing)",
+    "Request/Response body formats (JSON, XML, form-data)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Hypertext Transfer Protocol (HTTP) is the foundation of data communication on the web. It is a stateless, application-layer protocol running over TCP/IP."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Client sends Request (Method, URI, Headers, Body).",
+        "2. Server parses Request, performs logic.",
+        "3. Server sends Response (Status Code, Headers, Body).",
+        "4. Connection is closed (HTTP/1.0) or kept alive (HTTP/1.1)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>POST /api/login HTTP/1.1\nHost: example.com\nContent-Type: application/json\n\n{\"username\": \"admin\", \"password\": \"123\"}</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Client ]                        [ Server ]\n   | --- GET /users (Headers) -----&gt; |\n   |                                 | (DB Query)\n   | &lt;--- 200 OK (JSON Body) ------- |\n   \nStateless: Server forgets client immediately after response.</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "MDN HTTP Docs",
+      "u": "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+    },
+    {
+      "t": "HTTP.dev Reference",
+      "u": "https://http.dev"
+    },
+    {
+      "t": "Cloudflare: What is HTTP",
+      "u": "https://www.cloudflare.com/learning/http/what-is-http"
+    },
+    {
+      "t": "HTTP Status Codes Reference",
+      "u": "https://httpstatuses.com"
+    },
+    {
+      "t": "roadmap.sh/backend",
+      "u": "https://roadmap.sh/backend"
+    }
+  ]
+}

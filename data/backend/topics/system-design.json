@@ -1,0 +1,72 @@
+{
+  "id": "system-design",
+  "icon": "🏛️",
+  "t": "System Design",
+  "s": "Scalability, load balancing, CAP theorem, distributed systems",
+  "sec": "scale",
+  "lv": "advanced",
+  "d": "System design is how you build systems for millions of users. It's the most important senior engineering skill and core interview topic at top companies. Know horizontal scaling, load balancing, CAP theorem, and trade-off thinking.",
+  "c": [
+    "Horizontal vs vertical scaling",
+    "Load balancing (Round-robin, Least connections, Consistent hashing)",
+    "CAP theorem & PACELC",
+    "Consistent hashing",
+    "Database sharding & partitioning",
+    "Read replicas & primary-replica",
+    "CDN architecture",
+    "Rate limiting algorithms (token bucket, sliding window)",
+    "Event sourcing & CQRS",
+    "Circuit breaker, retry, bulkhead patterns"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "System Design is the process of architecting a scalable, highly available backend infrastructure. It involves combining load balancers, caches, databases, and microservices to handle massive user bases."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Requirements Clarification (Functional/Non-Functional).",
+        "2. Back-of-the-envelope estimation (QPS, Storage).",
+        "3. High-level design (Draw the boxes).",
+        "4. Deep dives (DB scaling, Caching strategies, Bottlenecks)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Key System Design Trade-offs:\n// 1. Latency vs Throughput\n// 2. Consistency vs Availability (CAP Theorem)\n// 3. SQL (ACID) vs NoSQL (Scaling)</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Client ---&gt; [ Load Balancer ]\n               /           \\\n          [App Server]   [App Server]\n             /   |          |   \\\n       [Cache] [Primary DB] [Replica DB]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "System Design Primer (GitHub)",
+      "u": "https://github.com/donnemartin/system-design-primer"
+    },
+    {
+      "t": "ByteByteGo",
+      "u": "https://bytebytego.com"
+    },
+    {
+      "t": "Grokking System Design",
+      "u": "https://www.designgurus.io/course/grokking-the-system-design-interview"
+    },
+    {
+      "t": "High Scalability Blog",
+      "u": "https://highscalability.com"
+    },
+    {
+      "t": "System Design Interview (book)",
+      "u": "https://www.amazon.com/System-Design-Interview-insiders-Second/dp/B08CMF2CQF"
+    }
+  ]
+}

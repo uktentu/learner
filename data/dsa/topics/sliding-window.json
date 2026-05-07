@@ -1,0 +1,51 @@
+{
+  "id": "sliding-window",
+  "icon": "🪟",
+  "t": "Sliding Window",
+  "s": "Fixed/Variable length windows",
+  "sec": "patterns",
+  "lv": "core",
+  "d": "Maintaining a subset of elements (window) that satisfies certain criteria over an array or string.",
+  "c": [
+    "Longest Substring Without Repeating Characters",
+    "Minimum Window Substring",
+    "Permutation in String",
+    "Sliding Window Maximum"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Sliding Window is a subset of Two Pointers. It represents a contiguous subsegment (window) of an array/string. The window expands from the right until a condition is violated, then shrinks from the left until the condition is valid again."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Initialize `left = 0`, `right = 0`.",
+        "2. Loop `right` through the array, adding to the window's state.",
+        "3. `while` the window is invalid, remove `left` from state and increment `left`.",
+        "4. Update the maximum/minimum window size."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def lengthOfLongestSubstring(s):\n  char_set = set()\n  left = 0\n  max_len = 0\n  \n  for right in range(len(s)):\n    while s[right] in char_set:\n      char_set.remove(s[left])\n      left += 1\n    char_set.add(s[right])\n    max_len = max(max_len, right - left + 1)\n    \n  return max_len</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) because left and right pointers only move forward. Space: O(K) where K is the distinct characters/elements."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ a, b, c, a, b, c, d ]\n [a, b, c]             -&gt; Max Length: 3\n    [b, c, a]          -&gt; Window slides\n       [c, a, b]\n          [a, b, c, d] -&gt; Max Length: 4</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

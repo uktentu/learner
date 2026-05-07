@@ -1,0 +1,52 @@
+{
+  "id": "binary-trees",
+  "icon": "🌳",
+  "t": "Binary Trees",
+  "s": "DFS, BFS, Traversals",
+  "sec": "trees",
+  "lv": "core",
+  "d": "Hierarchical data structure with at most two children per node.",
+  "c": [
+    "Inorder/Preorder/Postorder Traversal",
+    "Level Order Traversal (BFS)",
+    "Maximum Depth",
+    "Invert Binary Tree",
+    "Diameter of Binary Tree",
+    "Serialize and Deserialize"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Binary Trees are solved using Depth First Search (DFS/Recursion) or Breadth First Search (BFS/Queue). DFS is preferred for tree properties (depth, inversion, paths) while BFS is used for level-order problems."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Identify the base case (usually `if not node: return`).",
+        "2. Recursively call left child and right child.",
+        "3. Return the combined result to the parent."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def maxDepth(root):\n  if not root:\n    return 0\n  \n  left_depth = maxDepth(root.left)\n  right_depth = maxDepth(root.right)\n  \n  return 1 + max(left_depth, right_depth)</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) visits every node. Space: O(H) where H is the height of the tree (call stack)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">      ( 1 )      &lt;- Root\n     /     \\\n  ( 2 )   ( 3 )  &lt;- Level 1\n  /   \\      \\\n(4)   (5)    (6) &lt;- Leaf Nodes</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

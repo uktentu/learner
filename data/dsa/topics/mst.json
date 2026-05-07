@@ -1,0 +1,48 @@
+{
+  "id": "mst",
+  "icon": "🌲",
+  "t": "Minimum Spanning Tree",
+  "s": "Prim's, Kruskal's",
+  "sec": "graphs",
+  "lv": "advanced",
+  "d": "A subset of the edges of a connected, edge-weighted graph that connects all vertices without any cycles and with the minimum possible total edge weight.",
+  "c": [
+    "Min Cost to Connect All Points"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "A Minimum Spanning Tree connects all nodes in a graph with the minimum total edge weight, without cycles. Kruskal's algorithm achieves this by sorting all edges and using Union-Find to safely connect them."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Sort all edges by weight in ascending order.",
+        "2. Initialize Union-Find.",
+        "3. Iterate edges. If `union(u, v)` is True (no cycle formed), add edge weight to total.",
+        "4. Stop when V-1 edges are added."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Kruskal's logic\nedges.sort(key=lambda x: x[2]) # sort by weight\nmin_cost = 0\nuf = UnionFind(n)\nfor u, v, w in edges:\n  if uf.union(u, v):\n    min_cost += w\nreturn min_cost</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(E log E) to sort edges. Space: O(V) for Union-Find."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">    (A) -2- (B)\n   /   \\      |\n  1     4     3\n /       \\    |\n(C) -5- (D) - (E)\nMST uses edges (A-C:1), (A-B:2), (B-E:3)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

@@ -1,0 +1,68 @@
+{
+  "id": "docker",
+  "icon": "🐳",
+  "t": "Docker & Containers",
+  "s": "Images, containers, Dockerfile, Compose, volumes, networking",
+  "sec": "infrastructure",
+  "lv": "important",
+  "d": "Docker packages your app with its entire environment — solving 'works on my machine' forever. Containers are lightweight, reproducible, and the foundation of modern deployment. Every backend dev must know Docker.",
+  "c": [
+    "Images, containers, volumes, networks",
+    "Dockerfile: <code>FROM RUN COPY CMD EXPOSE</code>",
+    "Multi-stage builds (smaller images)",
+    "Docker Compose for local dev",
+    "Container registries (Docker Hub, ECR, GCR)",
+    "Environment variables & secrets",
+    "Docker networking (bridge, host, overlay)",
+    "Health checks & restart policies",
+    "Docker security best practices",
+    ".dockerignore file"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Docker packages an application and all its dependencies (OS libs, runtime, code) into a standardized unit called a Container. Containers run exactly the same way on any machine."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Write a Dockerfile (instructions to build image).",
+        "2. `docker build` to create an Image (read-only template).",
+        "3. `docker run` to start a Container (running instance of image).",
+        "4. Docker Compose manages multi-container apps (e.g., App + DB)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>FROM node:18-alpine\nWORKDIR /app\nCOPY package.json .\nRUN npm install\nCOPY . .\nEXPOSE 3000\nCMD [\"npm\", \"start\"]</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Virtual Machine vs Container:\n[App A]   [App B]      [App A]   [App B]\n[GuestOS] [GuestOS]    [--- Bins/Libs ---]\n[ Hypervisor    ]      [ Docker Engine   ]\n[ Host OS       ]      [ Host OS         ]\nVMs are heavy. Containers share Host OS and are lightweight.</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Docker Getting Started",
+      "u": "https://docs.docker.com/get-started"
+    },
+    {
+      "t": "Docker Compose Docs",
+      "u": "https://docs.docker.com/compose/"
+    },
+    {
+      "t": "Dockerfile Best Practices",
+      "u": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"
+    },
+    {
+      "t": "Play with Docker (online)",
+      "u": "https://labs.play-with-docker.com"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "cicd",
+  "icon": "🔄",
+  "t": "CI/CD Pipelines",
+  "s": "GitHub Actions, GitLab CI, Jenkins, automated testing & deployment",
+  "sec": "infrastructure",
+  "lv": "important",
+  "d": "CI/CD automates building, testing, and deploying your code. Continuous Integration catches bugs early by running tests on every push. Continuous Deployment ships code to production automatically. This is how modern teams ship fast with confidence.",
+  "c": [
+    "Continuous Integration vs Continuous Delivery vs Deployment",
+    "GitHub Actions workflow syntax",
+    "GitLab CI/CD pipelines",
+    "Jenkins (self-hosted)",
+    "Build → Test → Deploy pipeline stages",
+    "Environment-specific deployments (staging, prod)",
+    "Secrets management in CI/CD",
+    "Blue/Green & Canary deployments",
+    "Rolling deployments & rollback strategies",
+    "Infrastructure as Code (Terraform, Pulumi)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Continuous Integration / Continuous Deployment (CI/CD) automates the process of testing and shipping code. It eliminates manual deployments and ensures code in production is always tested and verified."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. CI: Developer pushes code. Server automatically builds and runs unit tests.",
+        "2. CD: If tests pass, code is automatically deployed to Staging/Production.",
+        "3. Tools: GitHub Actions, Jenkins, GitLab CI."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>name: Node.js CI\non: [push]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n    - uses: actions/checkout@v3\n    - run: npm ci\n    - run: npm test</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Code Push -&gt; [ CI Server ] -&gt; [ CD Server ] -&gt; [ Production ]\n             - Lint           - Build Image    - Zero Downtime\n             - Test           - Push Image     - K8s Rollout</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "GitHub Actions Docs",
+      "u": "https://docs.github.com/en/actions"
+    },
+    {
+      "t": "GitLab CI Tutorial",
+      "u": "https://docs.gitlab.com/ee/ci/quick_start/"
+    },
+    {
+      "t": "CI/CD Best Practices",
+      "u": "https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment"
+    },
+    {
+      "t": "Terraform Getting Started",
+      "u": "https://developer.hashicorp.com/terraform/tutorials"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "rest",
+  "icon": "🔗",
+  "t": "REST API Design",
+  "s": "Resource naming, CRUD, pagination, versioning, HATEOAS",
+  "sec": "core",
+  "lv": "core",
+  "d": "REST is the dominant API style. It's stateless, resource-oriented, and uses HTTP verbs. Knowing how to design clean, consistent RESTful APIs is a core skill you'll use in every backend project.",
+  "c": [
+    "REST constraints (stateless, uniform interface, layered)",
+    "Resource naming: <code>/users/:id/posts</code>",
+    "CRUD mapping to HTTP verbs",
+    "Idempotency of methods",
+    "API versioning (<code>/v1/</code>, headers, query params)",
+    "Pagination (offset, cursor-based, keyset)",
+    "Filtering, sorting, field selection",
+    "Error response envelopes",
+    "HATEOAS (Hypermedia links)",
+    "Content negotiation"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Representational State Transfer (REST) is an architectural style for APIs. It utilizes standard HTTP methods and treats everything as a 'Resource' accessed via a distinct URI."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Identify resources (e.g., /users, /posts).",
+        "2. Use standard verbs: GET (Read), POST (Create), PUT/PATCH (Update), DELETE (Destroy).",
+        "3. Keep endpoints stateless and cacheable.",
+        "4. Return proper HTTP status codes (200, 201, 400, 404)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Express.js REST Route\napp.patch('/api/users/:id', async (req, res) =&gt; {\n  const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);\n  if (!updatedUser) return res.status(404).send('Not found');\n  res.status(200).json(updatedUser);\n});</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Resource: /articles\nGET /articles          -&gt; Get list of articles\nPOST /articles         -&gt; Create a new article\nGET /articles/123      -&gt; Get article 123\nDELETE /articles/123   -&gt; Delete article 123</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "RESTful API Design Guide",
+      "u": "https://restfulapi.net"
+    },
+    {
+      "t": "Microsoft REST API Guidelines",
+      "u": "https://github.com/microsoft/api-guidelines"
+    },
+    {
+      "t": "Swagger/OpenAPI",
+      "u": "https://swagger.io/docs"
+    },
+    {
+      "t": "JSON:API Specification",
+      "u": "https://jsonapi.org"
+    },
+    {
+      "t": "Best Practices for REST APIs",
+      "u": "https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/"
+    }
+  ]
+}

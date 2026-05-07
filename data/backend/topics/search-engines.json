@@ -1,0 +1,74 @@
+{
+  "id": "search-engines",
+  "icon": "🔍",
+  "t": "Search Engines",
+  "s": "Elasticsearch, Meilisearch, Typesense, full-text search, indexing",
+  "sec": "optional",
+  "lv": "optional",
+  "d": "When SQL LIKE queries aren't enough, you need a search engine. Elasticsearch powers search at scale with full-text search, fuzzy matching, faceted filters, and autocomplete. Meilisearch and Typesense are simpler alternatives.",
+  "c": [
+    "Full-text search vs database LIKE queries",
+    "Elasticsearch core concepts (index, document, mapping)",
+    "Inverted index data structure",
+    "Analyzers, tokenizers, filters",
+    "Fuzzy search & typo tolerance",
+    "Faceted search & aggregations",
+    "Autocomplete & search-as-you-type",
+    "Meilisearch (simple, fast, typo-tolerant)",
+    "Typesense (lightweight alternative)",
+    "Search relevance tuning"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Search Engines is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Search Engines\nclass SearchEnginesManager {\n  initialize() {\n    console.log(\"Setting up Search Engines systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Search Engines Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Elasticsearch Guide",
+      "u": "https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html"
+    },
+    {
+      "t": "Meilisearch Docs",
+      "u": "https://www.meilisearch.com/docs"
+    },
+    {
+      "t": "Typesense Guide",
+      "u": "https://typesense.org/docs/guide/"
+    },
+    {
+      "t": "PostgreSQL Full Text Search",
+      "u": "https://www.postgresql.org/docs/current/textsearch.html"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "lis-lcs",
+  "icon": "📈",
+  "t": "LIS & LCS Variations",
+  "s": "Increasing/Common Subsequences",
+  "sec": "dp",
+  "lv": "advanced",
+  "d": "Longest Increasing Subsequence and Longest Common Subsequence form the basis of many string/array matching problems.",
+  "c": [
+    "Longest Increasing Subsequence (O(n log n) with Binary Search)",
+    "Longest Palindromic Subsequence",
+    "Distinct Subsequences"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Longest Common Subsequence (LCS) finds the longest subsequence shared between two strings. It requires a 2D DP matrix where `DP[i][j]` compares `text1[i]` and `text2[j]`."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. If chars match: `DP[i][j] = 1 + DP[i-1][j-1]` (Diagonal).",
+        "2. If they don't: `DP[i][j] = max(DP[i-1][j], DP[i][j-1])` (Max of top and left)."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def longestCommonSubsequence(text1, text2):\n  dp = [[0] * (len(text2) + 1) for _ in range(len(text1) + 1)]\n  \n  for i in range(len(text1) - 1, -1, -1):\n    for j in range(len(text2) - 1, -1, -1):\n      if text1[i] == text2[j]:\n        dp[i][j] = 1 + dp[i+1][j+1]\n      else:\n        dp[i][j] = max(dp[i][j+1], dp[i+1][j])\n        \n  return dp[0][0]</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N * M). Space: O(N * M)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">LCS of \"ABCD\" & \"ACDF\":\n    A  C  D  F\n  0  0  0  0  0\nA 0  1  1  1  1\nB 0  1  1  1  1\nC 0  1  2  2  2\nD 0  1  2  3  3 -&gt; LCS length is 3 (\"ACD\")</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

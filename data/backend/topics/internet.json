@@ -1,0 +1,72 @@
+{
+  "id": "internet",
+  "icon": "🌍",
+  "t": "Internet Fundamentals",
+  "s": "DNS, TCP/IP, how the web actually works",
+  "sec": "foundations",
+  "lv": "core",
+  "d": "Before writing backend code, understand how the internet works. Every request travels through DNS resolution, TCP connections, and IP routing. Knowing this helps you debug network issues, optimize performance, and understand why things like CDNs and load balancers exist.",
+  "c": [
+    "DNS resolution & domain hierarchy",
+    "TCP/IP protocol stack",
+    "How a URL becomes a webpage",
+    "IP addresses (IPv4 vs IPv6)",
+    "UDP vs TCP trade-offs",
+    "Packets, routing & hops",
+    "Domain registrars & DNS records (A, CNAME, MX)",
+    "ISPs and internet backbone"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "The Internet is a global network of interconnected networks. It relies on standard protocols like TCP/IP to route packets of data from a source IP address to a destination IP address across routers and switches."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. User types a URL.",
+        "2. Browser queries DNS for the IP address.",
+        "3. Browser opens a TCP connection to the IP.",
+        "4. Browser sends an HTTP request.",
+        "5. Server processes and sends HTTP response.",
+        "6. Browser renders the HTML."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code># Traceroute shows the path packets take across the internet\ntraceroute google.com\n1  192.168.1.1 (Router)\n2  10.0.0.1 (ISP)\n3  ... (Backbone)</code></pre>"
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[User/Browser] ---&gt; (ISP) ---&gt; [Internet Backbone] ---&gt; [Server]\n   198.51.100.1                                    203.0.113.5\nData is broken into \"packets\". Each packet finds its own route.</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "How DNS Works (comic)",
+      "u": "https://howdns.works"
+    },
+    {
+      "t": "MDN: How the Web Works",
+      "u": "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works"
+    },
+    {
+      "t": "Cloudflare: What is DNS",
+      "u": "https://www.cloudflare.com/learning/dns/what-is-dns/"
+    },
+    {
+      "t": "Stanford CS144: Networking",
+      "u": "https://cs144.github.io"
+    },
+    {
+      "t": "Submarine Cable Map",
+      "u": "https://www.submarinecablemap.com"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "linked-list-basics",
+  "icon": "🔗",
+  "t": "Linked Lists",
+  "s": "Nodes, traversal, reversal",
+  "sec": "linked-list",
+  "lv": "core",
+  "d": "A Linked List is a linear data structure where elements are not stored in contiguous memory locations. Each element (node) points to the next.",
+  "c": [
+    "Reverse a Linked List",
+    "Merge Two Sorted Lists",
+    "Reorder List",
+    "Remove Nth Node From End"
+  ],
+  "dd": [
+    {
+      "t": "Dummy Node pattern",
+      "p": [
+        "Always use a dummy node when the head of the linked list might change (e.g., merging lists, removing the head). Return `dummy.next` at the end."
+      ]
+    }
+  ],
+  "l": []
+}

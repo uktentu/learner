@@ -1,0 +1,36 @@
+{
+  "tools": [
+    ["Relational DB","PostgreSQL,MySQL,SQLite","Structured data, ACID transactions, relationships"],
+    ["Document DB","MongoDB,Firestore,CouchDB","Flexible schema, nested documents, rapid prototyping"],
+    ["Cache / KV Store","Redis,Memcached,KeyDB","Sessions, caching, rate limiting, leaderboards"],
+    ["Message Queue","RabbitMQ,Kafka,SQS,NATS","Async processing, event streaming, decoupling"],
+    ["Search Engine","Elasticsearch,Meilisearch,Typesense","Full-text search, faceted filtering, autocomplete"],
+    ["Web Server","Nginx,Apache,Caddy","Reverse proxy, load balancing, static files, TLS"],
+    ["Containers","Docker,Podman,containerd","Packaging apps, reproducible environments"],
+    ["Orchestration","Kubernetes,Docker Swarm,Nomad","Container orchestration at scale"],
+    ["CI/CD","GitHub Actions,GitLab CI,Jenkins,CircleCI","Automated build, test, deploy pipelines"],
+    ["Monitoring","Prometheus,Grafana,Datadog,New Relic","Metrics, dashboards, alerting"],
+    ["Error Tracking","Sentry,Bugsnag,Rollbar","Real-time error detection and debugging"],
+    ["Tracing","OpenTelemetry,Jaeger,Zipkin","Distributed request tracing"],
+    ["Auth","Auth0,Keycloak,Supabase Auth,Firebase Auth","Managed authentication and OAuth"],
+    ["API Testing","Postman,HTTPie,curl,Insomnia","Manual and automated API testing"],
+    ["ORM","SQLAlchemy,Prisma,Hibernate,TypeORM,Drizzle","Database abstraction layer"],
+    ["Cloud","AWS,GCP,Azure,DigitalOcean,Vercel","Cloud infrastructure and managed services"],
+    ["Serverless","AWS Lambda,Cloudflare Workers,Deno Deploy","Function-as-a-service, edge computing"],
+    ["API Gateway","Kong,Traefik,AWS API Gateway","Rate limiting, auth, routing for APIs"],
+    ["Task Queue","Celery,BullMQ,Sidekiq,Dramatiq","Background job processing"],
+    ["Log Management","ELK Stack,Loki,Fluentd","Log aggregation, search, and analysis"]
+  ],
+  "books": [
+    ["Designing Data-Intensive Applications","Book","System design, databases, distributed systems","https://dataintensive.net"],
+    ["System Design Interview (Alex Xu)","Book","System design interviews and patterns","https://bytebytego.com"],
+    ["Clean Code (Robert Martin)","Book","Writing maintainable, readable code","https://www.amazon.com/Clean-Code/dp/0132350882"],
+    ["The Pragmatic Programmer","Book","Software craftsmanship fundamentals","https://pragprog.com/titles/tpp20/"],
+    ["roadmap.sh/backend","Interactive","Complete backend developer roadmap","https://roadmap.sh/backend"],
+    ["freeCodeCamp Backend","Course","Free project-based backend curriculum","https://www.freecodecamp.org/learn/back-end-development-and-apis/"],
+    ["MIT Missing Semester","Course","Shell, Git, debugging, profiling","https://missing.csail.mit.edu"],
+    ["Hussein Nasser Backend Engineering","Video Course","Visual explanations of backend concepts","https://www.youtube.com/@hnasr"],
+    ["Google SRE Book (free)","Book","Site reliability engineering practices","https://sre.google/sre-book/table-of-contents/"],
+    ["Web Security Academy","Interactive","Hands-on web security training","https://portswigger.net/web-security"]
+  ]
+}

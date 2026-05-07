@@ -1,0 +1,51 @@
+{
+  "id": "linked-lists",
+  "icon": "🔗",
+  "t": "Linked Lists Basics",
+  "s": "Singly, Doubly, Dummy Nodes",
+  "sec": "linked-list",
+  "lv": "core",
+  "d": "Linear collections of data elements where each points to the next.",
+  "c": [
+    "Reverse Linked List",
+    "Merge Two Sorted Lists",
+    "Remove Nth Node From End",
+    "LRU Cache (Doubly Linked List)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Unlike arrays, Linked List nodes are scattered in memory. Each node holds data and a pointer to the next node. Reversing a linked list is the most common foundation for advanced list problems."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Maintain `prev = None` and `curr = head`.",
+        "2. Save `nxt = curr.next`.",
+        "3. Point `curr.next = prev`.",
+        "4. Move `prev = curr` and `curr = nxt`."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def reverseList(head):\n  prev, curr = None, head\n  while curr:\n    nxt = curr.next\n    curr.next = prev\n    prev = curr\n    curr = nxt\n  return prev</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) single pass. Space: O(1) pointers."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[Head] -&gt; [Node A] -&gt; [Node B] -&gt; [Tail] -&gt; null\n  |          |           |\nData: 1    Data: 2     Data: 3\nNext: A    Next: B     Next: null</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

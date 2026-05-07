@@ -1,0 +1,50 @@
+{
+  "id": "arrays-basics",
+  "icon": "📦",
+  "t": "Arrays & Strings",
+  "s": "Static/Dynamic, Strings",
+  "sec": "arrays",
+  "lv": "core",
+  "d": "The most fundamental data structures. Arrays provide O(1) access but O(n) insertion/deletion in the middle.",
+  "c": [
+    "Dynamic Arrays (ArrayList/Vector)",
+    "String Immutability",
+    "Reverse String",
+    "Anagrams",
+    "Palindrome"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Arrays are contiguous blocks of memory. Because they are contiguous, accessing any element by index is instantaneous. However, inserting or deleting an element in the middle requires shifting all subsequent elements."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "Dynamic Arrays (like Python List or Java ArrayList) allocate a fixed size under the hood.",
+        "When full, they allocate a new array of double the size and copy elements over (Amortized O(1))."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>arr = [1, 2, 3]\narr.append(4) # Amortized O(1)\narr.insert(0, 0) # O(N) because elements shift\n\n# String concatenation in loops is bad:\ns = \"\"\nfor char in chars:\n  s += char # O(N^2) in Java/C++\n# Use join instead:\ns = \"\".join(chars) # O(N)</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(1) read/write, O(N) insert/delete. Space: O(N) for dynamic resizing."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">Memory Layout:\n[Index 0] [Index 1] [Index 2] [Index 3]\n| 0x1000  | 0x1004  | 0x1008  | 0x100C  |\nO(1) access because Address = Base + (Index * Size)</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

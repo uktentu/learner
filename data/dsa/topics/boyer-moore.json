@@ -1,0 +1,49 @@
+{
+  "id": "boyer-moore",
+  "icon": "🗳️",
+  "t": "Boyer-Moore Majority Vote",
+  "s": "Majority element O(n) time, O(1) space",
+  "sec": "arrays",
+  "lv": "optional",
+  "d": "An algorithm to find the majority element (appears > ⌊n/2⌋ times) in a sequence.",
+  "c": [
+    "Majority Element",
+    "Majority Element II (appears > ⌊n/3⌋ times)"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Boyer-Moore Voting Algorithm finds the majority element (an element appearing more than N/2 times) in O(1) space. It works by maintaining a candidate and a counter. Because the majority element appears more than all other elements combined, it will always survive the 'voting' process."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Maintain `candidate` and `count`.",
+        "2. If count is 0, assign current element to candidate.",
+        "3. If current == candidate, increment count.",
+        "4. Else, decrement count."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def majorityElement(nums):\n  count = 0\n  candidate = None\n  \n  for num in nums:\n    if count == 0:\n      candidate = num\n    count += (1 if num == candidate else -1)\n    \n  return candidate</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: O(N) single pass. Space: O(1)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ 2, 2, 1, 1, 1, 2, 2 ]\n  ^\nCount: 1 (Cand: 2) -&gt; 2 (Cand: 2) -&gt; 1 -&gt; 0 -&gt; 1 (Cand: 1) ...</pre>"
+      ]
+    }
+  ],
+  "l": []
+}

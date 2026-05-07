@@ -1,0 +1,59 @@
+{
+  "id": "big-o",
+  "icon": "⏱️",
+  "t": "Time & Space Complexity",
+  "s": "Big-O, Omega, Theta",
+  "sec": "basics",
+  "lv": "core",
+  "d": "Big-O notation describes the worst-case time or space required by an algorithm to execute as the input size grows.",
+  "c": [
+    "O(1) Constant",
+    "O(log n) Logarithmic",
+    "O(n) Linear",
+    "O(n log n) Linearithmic",
+    "O(n²) Quadratic",
+    "O(2^n) Exponential",
+    "Amortized Analysis"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Big-O notation is the mathematical language we use to evaluate how the runtime or space requirements of an algorithm scale as the input size (N) grows towards infinity. We drop constants and lower-order terms because at massive scales, only the fastest-growing term matters."
+      ]
+    },
+    {
+      "t": "📋 Algorithm Steps",
+      "p": [
+        "1. Identify what 'N' is (usually the length of the input array/string).",
+        "2. Count the number of nested loops that depend on N.",
+        "3. Drop constants (e.g., O(2N) becomes O(N)).",
+        "4. Drop non-dominant terms (e.g., O(N² + N) becomes O(N²))."
+      ]
+    },
+    {
+      "t": "💻 Implementation Template (Python)",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>def constant(n):\n  return n[0] # O(1)\n\ndef linear(n):\n  for i in n: print(i) # O(N)\n\ndef quadratic(n):\n  for i in n:\n    for j in n: print(i,j) # O(N^2)</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Complexity",
+      "p": [
+        "Time: Evaluated per function. Space: Auxiliary space (excluding the input array itself)."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">O(1)   : 🟩🟩🟩🟩🟩 (Flat line)\nO(logN): 🟨🟨🟨🟨🟧 (Slow growth)\nO(N)   : 🟨🟧🟧🟥🟥 (Linear growth)\nO(N^2) : 🟧🟥🟥⬛⬛ (Parabolic growth)\nO(2^N) : 🟥⬛⬛⬛⬛ (Vertical explosion)</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Big-O Cheat Sheet",
+      "u": "https://www.bigocheatsheet.com"
+    }
+  ]
+}

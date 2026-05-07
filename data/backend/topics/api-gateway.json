@@ -1,0 +1,74 @@
+{
+  "id": "api-gateway",
+  "icon": "🚪",
+  "t": "API Gateway & Service Mesh",
+  "s": "Kong, Traefik, Istio, rate limiting, auth, routing, observability",
+  "sec": "optional",
+  "lv": "optional",
+  "d": "API Gateways sit in front of your services handling cross-cutting concerns: authentication, rate limiting, request routing, and monitoring. Service meshes handle service-to-service communication with mTLS, retries, and circuit breaking.",
+  "c": [
+    "API Gateway pattern & responsibilities",
+    "Kong Gateway (open-source, plugin-based)",
+    "AWS API Gateway (managed)",
+    "Traefik (cloud-native, auto-discovery)",
+    "Rate limiting at gateway level",
+    "Authentication & authorization at gateway",
+    "Request/response transformation",
+    "Service mesh concepts (Istio, Linkerd)",
+    "mTLS (mutual TLS) between services",
+    "Observability & request tracing"
+  ],
+  "dd": [
+    {
+      "t": "🧠 Core Concept & Intuition",
+      "p": [
+        "Api Gateway is a critical component of modern backend architecture. It focuses on optimizing performance, ensuring reliability, and scaling the system to handle increasing loads efficiently. Mastering this allows you to build enterprise-grade applications."
+      ]
+    },
+    {
+      "t": "📋 Architecture & Logic",
+      "p": [
+        "1. Understand the core principles and trade-offs.",
+        "2. Evaluate open-source tools and industry standards.",
+        "3. Implement the pattern within your backend stack.",
+        "4. Monitor performance and adjust configurations as scale increases."
+      ]
+    },
+    {
+      "t": "💻 Implementation Example",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--text2); line-height:1.4;\"><code>// Implementation architecture for Api Gateway\nclass ApiGatewayManager {\n  initialize() {\n    console.log(\"Setting up Api Gateway systems...\");\n  }\n  \n  process(data) {\n    // Core logic executed here\n    return data.optimize();\n  }\n}</code></pre>"
+      ]
+    },
+    {
+      "t": "⏱️ Trade-offs & Complexity",
+      "p": [
+        "Time: Depends heavily on implementation. Space: Varies by configuration."
+      ]
+    },
+    {
+      "t": "👀 Visual Explanation",
+      "p": [
+        "<pre style=\"background:var(--bg3); padding:1rem; border-radius:8px; overflow-x:auto; font-family:var(--font-mono); font-size:12px; color:var(--accent); line-height:1.4;\">[ Input Data ] --&gt; [ Api Gateway Engine ] --&gt; [ Optimized Output ]\n     |                 |\n[ Configs ]       [ Monitors ]</pre>"
+      ]
+    }
+  ],
+  "l": [
+    {
+      "t": "Kong Gateway Docs",
+      "u": "https://docs.konghq.com"
+    },
+    {
+      "t": "Traefik Docs",
+      "u": "https://doc.traefik.io/traefik/"
+    },
+    {
+      "t": "Istio Documentation",
+      "u": "https://istio.io/latest/docs/"
+    },
+    {
+      "t": "AWS API Gateway",
+      "u": "https://docs.aws.amazon.com/apigateway/"
+    }
+  ]
+}
